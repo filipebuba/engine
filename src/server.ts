@@ -2,12 +2,18 @@ import { createServer, type Server } from 'node:http';
 import type { Avaliacao } from './match.js';
 import type { Projeto } from './perfil.js';
 
+export type Pesquisa = { rodando: boolean; etapa: string; terminadaEm: string | null };
+
 export type AppState = {
   geradoEm: string;
   totalProjetos: number;
   avaliacoes: Avaliacao[];
   projetos?: Projeto[];
+  pesquisa?: Pesquisa;
 };
+
+export type Acao = (etapa: (msg: string) => void) => Promise<void>;
+export type Acoes = { pesquisar?: Acao; sincronizar?: Acao };
 
 const PAGINA = `<!doctype html>
 <html lang="pt-BR">
@@ -233,8 +239,40 @@ setInterval(tick, 5000);
 </body>
 </html>`;
 
-export function startServer(state: AppState, porta: number): Server {
+export function startServer(state: AppState, porta: number, acoes: Acoes = {}): Server {
+  state.pesquisa = { rodando: false, etapa: '', terminadaEm: null };
+
+  const dispara = (nome: keyof Acoes, res: import('node:http').ServerResponse): void => {
+    const acao = acoes[nome];
+    if (!acao) {
+      res.writeHead(404, { 'Content-Type': 'application/json' });
+      res.end(JSON.stringify({ erro: `ação "${nome}" não disponível neste servidor` }));
+      return;
+    }
+    if (state.pesquisa?.rodando) {
+      res.writeHead(409, { 'Content-Type': 'application/json' });
+      res.end(JSON.stringify({ erro: 'já há uma ação em andamento', etapa: state.pesquisa.etapa }));
+      return;
+    }
+    state.pesquisa = { rodando: true, etapa: 'iniciando', terminadaEm: null };
+    acao((msg) => { if (state.pesquisa) state.pesquisa.etapa = msg; })
+      .then(() => {
+        state.pesquisa = { rodando: false, etapa: 'concluída', terminadaEm: new Date().toLocaleString('pt-BR') };
+      })
+      .catch((e) => {
+        state.pesquisa = {
+          rodando: false,
+          etapa: `erro: ${e instanceof Error ? e.message : String(e)}`,
+          terminadaEm: new Date().toLocaleString('pt-BR'),
+        };
+      });
+    res.writeHead(202, { 'Content-Type': 'application/json' });
+    res.end(JSON.stringify({ ok: true }));
+  };
+
   const server = createServer((req, res) => {
+    if (req.method === 'POST' && req.url === '/api/pesquisar') { dispara('pesquisar', res); return; }
+    if (req.method === 'POST' && req.url === '/api/sincronizar') { dispara('sincronizar', res); return; }
     if (req.url === '/api/status') {
       res.writeHead(200, { 'Content-Type': 'application/json' });
       res.end(JSON.stringify(state));

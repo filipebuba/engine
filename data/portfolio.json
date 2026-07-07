@@ -1,0 +1,761 @@
+[
+  {
+    "nome": "GNB-coin",
+    "oQueE": "O projeto GNB-coin parece ser uma iniciativa relacionada a criptomoeda, com documentos sobre monetização, plano estratégico e estrutura de infraestrutura.",
+    "problema": "não evidente no repo",
+    "stack": "não evidente no repo",
+    "estado": "não evidente no repo",
+    "palavrasChave": [
+      "criptomoeda",
+      "monetização",
+      "infraestrutura"
+    ]
+  },
+  {
+    "nome": "Guardianai",
+    "oQueE": "Um projeto de blog de viagem, provavelmente uma aplicação web com interface baseada em Figma.",
+    "problema": "não evidente no repo",
+    "stack": "[",
+    "estado": "não evidente no repo",
+    "palavrasChave": [
+      "blog de viagem",
+      "interface web",
+      "Figma",
+      "React",
+      "MUI"
+    ]
+  },
+  {
+    "nome": "Kimi_Agent_Guinea-Bissau Ride App",
+    "oQueE": "Um aplicativo de transporte adaptado para a Guiné-Bissau, com suporte para funcionamento offline e baixa conectividade de internet.",
+    "problema": "Resolve o problema de transporte em áreas com pouca conectividade de internet, oferecendo um serviço acessível para usuários locais.",
+    "stack": "React (PWA), Node.js/Express, Kotlin (Android), TypeScript",
+    "estado": "em desenvolvimento",
+    "palavrasChave": [
+      "transporte",
+      "Guiné-Bissau",
+      "offline",
+      "PWA",
+      "aplicativo local",
+      "baixa conectividade"
+    ]
+  },
+  {
+    "nome": "abenyfashion-app",
+    "oQueE": "Um aplicativo de moda desenvolvido com React Native e Expo, provavelmente com integração a um backend via Supabase.",
+    "problema": "não evidente no repo",
+    "stack": "[",
+    "estado": "em desenvolvimento",
+    "palavrasChave": [
+      "aplicativo de moda",
+      "React Native",
+      "Tailwind CSS",
+      "Expo",
+      "Supabase"
+    ]
+  },
+  {
+    "nome": "abenyfashion-mobile",
+    "oQueE": "Um aplicativo de moda baseado em um template de projeto React Native, com suporte a navegação, armazenamento local e integração com backend via TRPC.",
+    "problema": "Resolver a necessidade de desenvolver um aplicativo de moda com funcionalidades básicas de navegação e armazenamento, para usuários que desejam uma estrutura inicial rápida e escalável.",
+    "stack": "[",
+    "estado": "em desenvolvimento",
+    "palavrasChave": [
+      "aplicativo de moda",
+      "React Native",
+      "TRPC",
+      "Tailwind CSS",
+      "template de projeto",
+      "navegação"
+    ]
+  },
+  {
+    "nome": "afagb_usa",
+    "oQueE": "Um site institucional para uma organização, provavelmente uma associação ou entidade sem fins lucrativos, com seções para eventos, membros, notícias e contato.",
+    "problema": "Resolver a necessidade de ter uma presença online para divulgar atividades, membros, eventos e outros conteúdos relevantes para a comunidade.",
+    "stack": "[",
+    "estado": "em uso",
+    "palavrasChave": [
+      "site institucional",
+      "organização sem fins lucrativos",
+      "presença online",
+      "gestão de eventos",
+      "comunicação digital"
+    ]
+  },
+  {
+    "nome": "audiobook-pessoal",
+    "oQueE": "Projeto que transforma livros e manuscritos em áudio narrado, utilizando tecnologias open source e sem depender de APIs pagas.",
+    "problema": "Resolver o problema de transformar textos em áudio de forma autônoma e acessível, especialmente para pessoas que desejam criar audiobooks pessoais ou comerciais.",
+    "stack": "Python, Gradio, pdfplumber, EasyOCR, TrOCR, Piper, pydub, ffmpeg, PyTorch",
+    "estado": "em desenvolvimento",
+    "palavrasChave": [
+      "audiobook",
+      "TTS",
+      "OCR",
+      "open source",
+      "processamento de texto",
+      "gradio"
+    ]
+  },
+  {
+    "nome": "audiobook-web",
+    "oQueE": "Aplicação frontend para criar audiobooks personalizados com IA, permitindo a leitura de PDFs, EPUBs, Word, manuscritos e imagens via TTS.",
+    "problema": "Resolver a necessidade de transformar livros em audiobooks personalizados, acessíveis para usuários que desejam ouvir livros em voz própria ou personalizada.",
+    "stack": "React, TypeScript, Vite, Tailwind CSS, Supabase, Stripe, TanStack Query, Zustand, HuggingFace Space",
+    "estado": "em uso",
+    "palavrasChave": [
+      "audiobook",
+      "IA",
+      "TTS",
+      "React",
+      "Supabase",
+      "personalização"
+    ]
+  },
+  {
+    "nome": "bufala",
+    "oQueE": "O Moransa é um sistema de inteligência artificial comunitária que utiliza o Gemma 3n offline para fornecer assistência especializada a comunidades rurais.",
+    "problema": "Resolve o problema de falta de acesso a informações e serviços especializados em comunidades rurais, especialmente na Guiné-Bissau.",
+    "stack": "Flutter, FastAPI, Docker, Gemma 3n offline",
+    "estado": "em desenvolvimento",
+    "palavrasChave": [
+      "IA comunitária",
+      "assistência rural",
+      "Gemma 3n",
+      "sistema adaptativo",
+      "Guiné-Bissau",
+      "Flutter"
+    ]
+  },
+  {
+    "nome": "cardja",
+    "oQueE": "Site institucional para corretor de imóveis especializado em apartamentos de lançamento e na planta na Grande São Paulo, com integração de Supabase.",
+    "problema": "Resolver a necessidade de apresentar um portfólio de imóveis, captar leads e educar clientes, direcionando-os ao WhatsApp para conversão.",
+    "stack": "[",
+    "estado": "em uso",
+    "palavrasChave": [
+      "site institucional",
+      "corretor de imóveis",
+      "portfólio de empreendimentos",
+      "captura de leads",
+      "whatsapp",
+      "supabase"
+    ]
+  },
+  {
+    "nome": "cartao.gb",
+    "oQueE": "O projeto é um repositório que contém documentos (docs) relacionados a um cartão de projeto.",
+    "problema": "não evidente no repo",
+    "stack": "não evidente no repo",
+    "estado": "não evidente no repo",
+    "palavrasChave": [
+      "cartão de projeto",
+      "repositório",
+      "documentação"
+    ]
+  },
+  {
+    "nome": "datacenter",
+    "oQueE": "Uma plataforma 3D interativa para monitoramento e gestão de data centers, com IA preditiva e integração com LLMs.",
+    "problema": "Resolve o problema de visualização e monitoramento eficiente de infraestruturas de data centers para administradores e engenheiros de TI.",
+    "stack": "React, FastAPI, Three.js, Docker",
+    "estado": "em desenvolvimento",
+    "palavrasChave": [
+      "data center",
+      "IA preditiva",
+      "visualização 3D",
+      "FastAPI",
+      "React",
+      "Three.js"
+    ]
+  },
+  {
+    "nome": "datacenter-vision-platform",
+    "oQueE": "Uma plataforma que transforma data centers em experiências 3D interativas com IA preditiva em tempo real.",
+    "problema": "Resolve o problema de monitoramento e gestão eficiente de infraestruturas de data centers, para administradores e engenheiros de TI.",
+    "stack": "React, FastAPI, Three.js, Docker",
+    "estado": "em desenvolvimento",
+    "palavrasChave": [
+      "data center",
+      "IA preditiva",
+      "visualização 3D",
+      "metaverso",
+      "gestão de infraestrutura",
+      "FastAPI"
+    ]
+  },
+  {
+    "nome": "datacentervision",
+    "oQueE": "Plataforma que transforma data centers em experiências 3D interativas com IA preditiva em tempo real.",
+    "problema": "Resolve o problema de monitoramento e gestão eficiente de infraestruturas críticas de TI, para administradores e engenheiros de data centers.",
+    "stack": "React, FastAPI, Three.js, Docker",
+    "estado": "em desenvolvimento",
+    "palavrasChave": [
+      "data center",
+      "IA preditiva",
+      "visualização 3D",
+      "FastAPI",
+      "React",
+      "Three.js"
+    ]
+  },
+  {
+    "nome": "digitaliza-admin",
+    "oQueE": "Um projeto Next.js que serve como uma aplicação administrativa, provavelmente para gerenciar ou visualizar dados de forma interativa.",
+    "problema": "não evidente no repo",
+    "stack": "[",
+    "estado": "em desenvolvimento",
+    "palavrasChave": [
+      "Next.js",
+      "aplicação administrativa",
+      "React",
+      "Tailwind CSS",
+      "Recharts"
+    ]
+  },
+  {
+    "nome": "digitaliza-guine-bissau",
+    "oQueE": "Aplicação móvel/web para digitalização de documentos, OCR, organização, exportação e sincronização, com backend em Node.js.",
+    "problema": "Resolver a necessidade de digitalização e organização de documentos para usuários em Guiné-Bissau, facilitando o acesso e a gestão de informações.",
+    "stack": "Expo, React Native, Node.js, tRPC, Drizzle ORM, TypeScript, Vitest",
+    "estado": "em desenvolvimento",
+    "palavrasChave": [
+      "digitalização de documentos",
+      "OCR",
+      "React Native",
+      "Node.js",
+      "tRPC",
+      "Guiné-Bissau"
+    ]
+  },
+  {
+    "nome": "djambo-mobile",
+    "oQueE": "Um template para desenvolvimento de aplicações mobile usando React Native e Expo, com integração a backend via Supabase e Trpc.",
+    "problema": "Resolver a complexidade de setup inicial de projetos mobile, fornecendo uma estrutura pronta para desenvolvedores.",
+    "stack": "[",
+    "estado": "em desenvolvimento",
+    "palavrasChave": [
+      "React Native",
+      "Expo",
+      "Supabase",
+      "Trpc",
+      "Tailwind CSS",
+      "template mobile"
+    ]
+  },
+  {
+    "nome": "djambo_page",
+    "oQueE": "Um sistema de auto-pedidos para restaurantes com uma landing page e um painel administrativo para gerenciar conteúdo e planos de preço.",
+    "problema": "Resolver a necessidade de restaurantes em ter um sistema de pedidos online e um painel de controle para gerenciar informações do site e planos de serviço.",
+    "stack": "[",
+    "estado": "em desenvolvimento",
+    "palavrasChave": [
+      "sistema de pedidos",
+      "painel administrativo",
+      "landing page",
+      "Supabase",
+      "React",
+      "Tailwind CSS"
+    ]
+  },
+  {
+    "nome": "djambo_rep",
+    "oQueE": "Um restaurante digital que combina culinária africana autêntica com inteligência artificial generativa, oferecendo funcionalidades como criação de pratos personalizados, análise de fotos de comida e gestão de estoque.",
+    "problema": "Resolver a falta de personalização e eficiência na gestão de restaurantes, especialmente para quem busca experiências gastronômicas únicas e integradas com tecnologia de ponta.",
+    "stack": "Supabase, React, Capacitor, Google Gemini, Vercel, Leaflet, QR Code, Lucide React",
+    "estado": "em desenvolvimento",
+    "palavrasChave": [
+      "IA generativa",
+      "culinária africana",
+      "gestão de restaurante",
+      "supabase",
+      "restaurante digital",
+      "análise de imagem"
+    ]
+  },
+  {
+    "nome": "djuntu",
+    "oQueE": "Plataforma PaaS auto-hospedada para o ecossistema Datacenter Vision em Guiné-Bissau, que orquestra múltiplas plataformas em um único servidor físico.",
+    "problema": "Resolução de latência em USSD, soberania de dados, resiliência em interrupções de internet/energia e gestão unificada de serviços em Docker.",
+    "stack": "Docker, Dokploy, Traefik, Supabase",
+    "estado": "em uso",
+    "palavrasChave": [
+      "PaaS",
+      "orquestração de serviços",
+      "auto-hospedado",
+      "soberania de dados",
+      "resiliência",
+      "Guiné-Bissau"
+    ]
+  },
+  {
+    "nome": "fbg_cpaas",
+    "oQueE": "Um MVP de CPaaS (Comunicação em Nuvem como Serviço) para Gov-GB, implementado com NestJS, que inclui endpoints para USSD, pagamentos e relatórios operacionais.",
+    "problema": "Resolver a necessidade de comunicação e processamento de pagamentos para serviços governamentais, oferecendo relatórios operacionais para monitoramento e tomada de decisão.",
+    "stack": "NestJS, Supabase, PostgreSQL, Redis, Docker, TypeScript",
+    "estado": "em desenvolvimento",
+    "palavrasChave": [
+      "CPaaS",
+      "NestJS",
+      "USSD",
+      "relatórios operacionais",
+      "Gov-GB",
+      "MVP"
+    ]
+  },
+  {
+    "nome": "fbgbank",
+    "oQueE": "BUBANK é uma infraestrutura de banco digital regulado, operando em FCFA (XOF) e interoperável via PI-SPI, com canais USSD e aplicações web/mobile para a Guiné-Bissau e o espaço UEMOA.",
+    "problema": "Resolver a falta de infraestrutura bancária digital inclusiva e regulada para cidadãos e empresas da UEMOA, especialmente em regiões com baixa conectividade.",
+    "stack": "Expo, React Native, NestJS, Next.js, pnpm workspaces, Turborepo, Supabase",
+    "estado": "em desenvolvimento",
+    "palavrasChave": [
+      "banco digital",
+      "UEMOA",
+      "PI-SPI",
+      "FCFA",
+      "inclusão financeira",
+      "USSD"
+    ]
+  },
+  {
+    "nome": "gov.gb",
+    "oQueE": "Plataforma de Governo Digital da Guiné-Bissau, com módulos de identidade digital, acesso via USSD e monitoramento de indicadores públicos.",
+    "problema": "Resolve a falta de infraestrutura digital e acesso a serviços públicos em regiões com baixa conectividade, especialmente para cidadãos da Guiné-Bissau.",
+    "stack": "Next.js 16, React 19, TypeScript, Tailwind CSS 4, Supabase, Recharts, Zustand",
+    "estado": "em desenvolvimento",
+    "palavrasChave": [
+      "governo digital",
+      "identidade digital",
+      "USSD",
+      "monitoramento público",
+      "supabase",
+      "next.js"
+    ]
+  },
+  {
+    "nome": "guarddin_ai",
+    "oQueE": "Plataforma de segurança adaptativa com IA, que inclui aplicativos para Android e Desktop, backend com Supabase e um modelo LLM local para processamento de dados.",
+    "problema": "Resolver problemas de segurança adaptativa para usuários que necessitam de soluções integradas com IA, em dispositivos móveis e desktop.",
+    "stack": "LLM (Qwen3.5-4B/9B), MLC-LLM, Ollama, Supabase, Tauri, Python, UV (gestor de pacotes).",
+    "estado": "em desenvolvimento",
+    "palavrasChave": [
+      "segurança adaptativa",
+      "IA",
+      "aplicativo Android",
+      "aplicativo desktop",
+      "modelo LLM",
+      "Supabase"
+    ]
+  },
+  {
+    "nome": "guine-ride-wallet",
+    "oQueE": "O GuinéRide é um aplicativo de ride-hailing integrado com carteira digital, desenvolvido para o mercado da Guiné-Bissau, com foco em resiliência offline e baixo consumo de dados.",
+    "problema": "Resolve o problema de acesso a serviços de mobilidade e inclusão financeira em regiões com infraestrutura limitada, especialmente para usuários em Guiné-Bissau.",
+    "stack": "React Native + Expo SDK 54, Tailwind CSS, Drizzle, Sentry, React Query, TRPC",
+    "estado": "em desenvolvimento",
+    "palavrasChave": [
+      "ride-hailing",
+      "carteira digital",
+      "offline-first",
+      "inclusão financeira",
+      "Guiné-Bissau",
+      "baixo consumo de dados"
+    ]
+  },
+  {
+    "nome": "gwcloud",
+    "oQueE": "O projeto gwcloud parece ser um repositório que contém diversos documentos relacionados a iniciativas de governança digital, inclusão digital, uso de USSD, arquitetura de sistemas e legislação, principalmente no contexto de países da África e da CPLP.",
+    "problema": "Resolver problemas relacionados à governança digital, inclusão digital e implementação de soluções tecnológicas em países em desenvolvimento, especialmente em contextos como Guiné-Bissau e outros países da CPLP.",
+    "stack": "não evidente no repo",
+    "estado": "não evidente no repo",
+    "palavrasChave": [
+      "governança digital",
+      "inclusão digital",
+      "USSD",
+      "CPLP",
+      "arquitetura de sistemas",
+      "legislação digital"
+    ]
+  },
+  {
+    "nome": "idpro",
+    "oQueE": "Sistema web para criação, gestão e emissão de crachás com autenticação e onboarding de organização.",
+    "problema": "Resolve o problema de gestão e emissão de crachás para organizações, permitindo importação de membros por CSV e exportação em PNG/PDF.",
+    "stack": "React 19, Vite, TypeScript, Tailwind CSS v4, Supabase, Zustand, Vitest",
+    "estado": "em desenvolvimento",
+    "palavrasChave": [
+      "crachás",
+      "gestão de membros",
+      "supabase",
+      "react",
+      "vite",
+      "autenticação"
+    ]
+  },
+  {
+    "nome": "jogo_cinira",
+    "oQueE": "Um protótipo de jogo educativo que simula uma jornada universitária com desafios e regiões para exploração.",
+    "problema": "Ajudar estudantes a se familiarizarem com a rotina universitária, organização acadêmica e uso de espaços da faculdade, de forma interativa e envolvente.",
+    "stack": "[",
+    "estado": "protótipo",
+    "palavrasChave": [
+      "jogo educativo",
+      "gamificação",
+      "universidade",
+      "desafios",
+      "protótipo",
+      "organização acadêmica"
+    ]
+  },
+  {
+    "nome": "landing-page-dev",
+    "oQueE": "Uma plataforma de portfólio profissional, blog, gestão de serviços e recebimento de propostas de projetos, com foco em performance, SEO e interface administrativa moderna.",
+    "problema": "Resolver a necessidade de profissionais e empresas de ter uma plataforma completa para exibir seu portfólio, gerenciar serviços, captar leads e publicar conteúdo, com ferramentas modulares e administráveis.",
+    "stack": "React, TypeScript, Tailwind CSS, Supabase, Vite, Drizzle, Supabase Schema, Docker",
+    "estado": "em uso",
+    "palavrasChave": [
+      "portfólio profissional",
+      "blog em markdown",
+      "gestão de serviços",
+      "checkout com stripe",
+      "painel administrativo",
+      "supabase"
+    ]
+  },
+  {
+    "nome": "leigb-backend",
+    "oQueE": "Um backend para uma aplicação, provavelmente relacionada a renderização ou processamento de dados, com estrutura para API, modelos e serviços.",
+    "problema": "não evidente no repo",
+    "stack": "Python, Docker, PostgreSQL (inferido por migrations e models), e possivelmente frameworks como FastAPI (inferido por main.py e estrutura de API)",
+    "estado": "não evidente no repo",
+    "palavrasChave": [
+      "backend",
+      "python",
+      "docker",
+      "api",
+      "renderização"
+    ]
+  },
+  {
+    "nome": "leigb-ocr",
+    "oQueE": "Serviço de OCR para digitalizar documentos legais de Guiné-Bissau, utilizando múltiplas engines de reconhecimento de texto.",
+    "problema": "Resolver o problema de digitalização de documentos legais manuscritos e impressos em português, especialmente para usuários em Guiné-Bissau.",
+    "stack": "EasyOCR, PaddleOCR, Tesseract, Docker, Python",
+    "estado": "protótipo",
+    "palavrasChave": [
+      "OCR",
+      "documentos legais",
+      "Guiné-Bissau",
+      "reconhecimento de texto",
+      "serviço de API"
+    ]
+  },
+  {
+    "nome": "livro-ia-soberana",
+    "oQueE": "Um repositório que contém um livro sobre inteligência artificial, com capítulos e um índice.",
+    "problema": "não evidente no repo",
+    "stack": "não evidente no repo",
+    "estado": "não evidente no repo",
+    "palavrasChave": [
+      "livro",
+      "inteligência artificial",
+      "repositório",
+      "capítulos"
+    ]
+  },
+  {
+    "nome": "nha_saude",
+    "oQueE": "Aplicativo de saúde offline-first e sistema USSD para Guiné-Bissau, com painel administrativo.",
+    "problema": "Fornecer um sistema de saúde funcional em áreas com conectividade limitada para trabalhadores de saúde e gestores.",
+    "stack": "Next.js 15, Bun, Supabase, Docker",
+    "estado": "em desenvolvimento",
+    "palavrasChave": [
+      "saúde",
+      "offline-first",
+      "USSD",
+      "Guiné-Bissau",
+      "Supabase",
+      "Next.js"
+    ]
+  },
+  {
+    "nome": "nhagriot-core",
+    "oQueE": "Nha Griot Core é um núcleo de ferramentas offline-first para leitura, audição e estudo, extraído do aplicativo Nhagriot.",
+    "problema": "Resolve o problema de acesso a livros e materiais de estudo em comunidades com conectividade instável, permitindo o uso offline e a sincronização quando a rede estiver disponível.",
+    "stack": "JavaScript, TypeScript, IndexedDB, PDFJS, docx, pdfmake, zustand",
+    "estado": "em uso",
+    "palavrasChave": [
+      "offline-first",
+      "audiolivro",
+      "estudo",
+      "sincronização",
+      "biblioteca local",
+      "PWA"
+    ]
+  },
+  {
+    "nome": "no-bai-fintech",
+    "oQueE": "Um projeto de fintech desenvolvido com a plataforma v0.app e hospedado no Vercel, sincronizado automaticamente com o repositório.",
+    "problema": "Resolver necessidades de automação e sincronização de projetos fintech entre o ambiente de desenvolvimento e o repositório, para usuários que utilizam a v0.app.",
+    "stack": "Next.js, Radix UI, Vercel, v0.app",
+    "estado": "em desenvolvimento",
+    "palavrasChave": [
+      "fintech",
+      "automatização",
+      "sincronização",
+      "v0.app",
+      "Next.js",
+      "Vercel"
+    ]
+  },
+  {
+    "nome": "pegwater",
+    "oQueE": "Site de apresentação para a startup Pegatesu WaterFarm, que oferece soluções de irrigação e financiamento agrícola em Guinea-Bissau.",
+    "problema": "Acesso limitado a água produtiva, irrigação eficiente e insumos agrícolas para pequenos agricultores em Guinea-Bissau.",
+    "stack": "HTML, CSS, JavaScript",
+    "estado": "em uso",
+    "palavrasChave": [
+      "agricultura de precisão",
+      "fintech climática",
+      "financiamento agrícola",
+      "Guinea-Bissau",
+      "inovação rural",
+      "sustentabilidade"
+    ]
+  },
+  {
+    "nome": "piper",
+    "oQueE": "O projeto Piper é uma ferramenta de síntese de voz de código aberto.",
+    "problema": "Resolve o problema de converter texto em fala de forma natural e personalizada, destinado a usuários que necessitam de assistência vocal em aplicações multilíngues.",
+    "stack": "[",
+    "estado": "não evidente no repo",
+    "palavrasChave": [
+      "síntese de voz",
+      "IA de fala",
+      "processamento de linguagem natural",
+      "ferramenta de voz"
+    ]
+  },
+  {
+    "nome": "piqui",
+    "oQueE": "Um projeto de frontend em React e backend em Express/Prisma, hospedado no Supabase e Vercel, para uma plataforma de beleza e tranças.",
+    "problema": "Resolver a necessidade de um sistema web para gestão de serviços de beleza e tranças, com integração de banco de dados e ferramentas de pagamento.",
+    "stack": "React, Vite, Express, Prisma, Supabase, Vercel, TypeScript",
+    "estado": "em desenvolvimento",
+    "palavrasChave": [
+      "beleza",
+      "tranças",
+      "supabase",
+      "react",
+      "vercel",
+      "prisma"
+    ]
+  },
+  {
+    "nome": "piquitrancas",
+    "oQueE": "Projeto que inclui scripts e configurações para verificação de tamanho de arquivos e hospedagem de site.",
+    "problema": "Resolver problemas relacionados ao gerenciamento de tamanho de arquivos e publicação de sites, para desenvolvedores e equipes de TI.",
+    "stack": "[",
+    "estado": "não evidente no repo",
+    "palavrasChave": [
+      "verificação de tamanho",
+      "hospedagem de site",
+      "script PowerShell",
+      "Vercel",
+      "automatização de arquivos",
+      "gerenciamento de TI"
+    ]
+  },
+  {
+    "nome": "revista_perula_africana",
+    "oQueE": "Revista Pérola Afrikana é um site de jornalismo cultural africano com um sistema administrativo completo para gerenciamento de conteúdo.",
+    "problema": "Resolver a falta de voz e representação para pessoas negras e afro-descendentes, oferecendo um plataforma de conteúdo acessível e atualizável por usuários não técnicos.",
+    "stack": "[",
+    "estado": "em uso",
+    "palavrasChave": [
+      "jornalismo cultural",
+      "revista africana",
+      "sistema administrativo",
+      "Supabase",
+      "Vercel",
+      "comunidade afro"
+    ]
+  },
+  {
+    "nome": "rpa-saas",
+    "oQueE": "SaaS de RPA soberano que permite a criação de fluxos declarativos em YAML e execução local verificável.",
+    "problema": "Resolve a necessidade de PME brasileiras em automatizar tarefas como monitoramento de preço e alertas, com custo fixo em R$ e conformidade com a LGPD.",
+    "stack": "YAML, Node.js, TypeScript, Vitest",
+    "estado": "em desenvolvimento",
+    "palavrasChave": [
+      "RPA",
+      "SaaS",
+      "YAML",
+      "PME",
+      "automatização",
+      "monitoramento de preço"
+    ]
+  },
+  {
+    "nome": "sankofa",
+    "oQueE": "Jogo educativo digital de enigmas sobre a História Geral da África, baseado na UNESCO, com foco em aprendizado interativo e recuperação de memória histórica.",
+    "problema": "Falta de recursos educativos interativos e acessíveis sobre a História Geral da África, especialmente para jovens e educadores.",
+    "stack": "HTML, CSS, JavaScript (sem dependências externas), localStorage para persistência de dados.",
+    "estado": "em desenvolvimento",
+    "palavrasChave": [
+      "História da África",
+      "jogo educativo",
+      "UNESCO",
+      "enigmas",
+      "aprendizado interativo",
+      "cultura africana"
+    ]
+  },
+  {
+    "nome": "seuamigoemsp",
+    "oQueE": "Um projeto de aplicação web e mobile que utiliza uma arquitetura serverless com foco em escalabilidade e tempo de mercado, baseado em Supabase e React.",
+    "problema": "Resolver a necessidade de startups em validar rapidamente um produto e escalar posteriormente, evitando custos e complexidade de infraestrutura.",
+    "stack": "React (Vite/TypeScript), Tailwind CSS, Supabase (PostgreSQL), Vercel, PWA, Auth Guard, Zod, Zustand, React Query.",
+    "estado": "protótipo",
+    "palavrasChave": [
+      "serverless",
+      "supabase",
+      "pwa",
+      "react",
+      "scalabilidade",
+      "mvp"
+    ]
+  },
+  {
+    "nome": "sifrot_gb",
+    "oQueE": "Sistema web para fiscalização digital do transporte interurbano de passageiros em Guiné-Bissau, desenvolvido para a Secretaria de Estado da Aviação Civil.",
+    "problema": "Fiscalização e regulação ineficiente do transporte de passageiros, dificultando o controle de operadores, motoristas e veículos, e prejudicando a segurança e a qualidade do serviço.",
+    "stack": "Next.js 14 (App Router), React 18, TypeScript, Supabase (PostgreSQL, Auth, Realtime, Edge Functions), Tailwind CSS, shadcn/ui, React Hook Form, Zod.",
+    "estado": "em desenvolvimento",
+    "palavrasChave": [
+      "fiscalização de transporte",
+      "sistema de regulação",
+      "Guiné-Bissau",
+      "Next.js",
+      "Supabase",
+      "Tailwind CSS"
+    ]
+  },
+  {
+    "nome": "sistema_inergetico",
+    "oQueE": "O projeto parece estar relacionado a um sistema energético, com foco em modernização e representação visual através de um arquivo SVG.",
+    "problema": "não evidente no repo",
+    "stack": "SVG, não evidente no repo",
+    "estado": "não evidente no repo",
+    "palavrasChave": [
+      "sistema energético",
+      "modernização",
+      "SVG"
+    ]
+  },
+  {
+    "nome": "sobera_skill",
+    "oQueE": "Projeto que organiza e executa habilidades de IA, com foco em treinamento e execução no ambiente WSL Ubuntu.",
+    "problema": "Resolve a necessidade de gerenciar e executar habilidades de IA de forma eficiente, especialmente para usuários que trabalham com ambientes híbridos Windows-WSL.",
+    "stack": "WSL Ubuntu, Markdown, Draw.io, Ollama, harness, loop, treino",
+    "estado": "em desenvolvimento",
+    "palavrasChave": [
+      "IA",
+      "WSL",
+      "treinamento",
+      "habilidades",
+      "ambiente híbrido",
+      "execução"
+    ]
+  },
+  {
+    "nome": "spaas",
+    "oQueE": "SPaaS é uma plataforma que recebe um schema PostgreSQL anotado e gera múltiplos canais de interface, como USSD, web (React/Next.js) e IVR de voz, para serviços públicos digitais em contextos de baixa conectividade e multilinguismo.",
+    "problema": "Resolve o problema de fornecer interfaces acessíveis para serviços públicos digitais em regiões com baixa conectividade e necessidade de suporte multilinguístico, especialmente para usuários de línguas como o crioulo guineense.",
+    "stack": "Node.js, PostgreSQL, React/Next.js, OpenAPI, CLI customizada",
+    "estado": "protótipo",
+    "palavrasChave": [
+      "SPaaS",
+      "schema PostgreSQL",
+      "USSD",
+      "Next.js",
+      "OpenAPI",
+      "serviços públicos digitais"
+    ]
+  },
+  {
+    "nome": "uberbissau",
+    "oQueE": "Um aplicativo Android que pode ser executado localmente e que está integrado com a Gemini API para oferecer funcionalidades de IA.",
+    "problema": "Permite que usuários desenvolvam e testem aplicativos de IA localmente, facilitando o processo de integração com a Gemini API.",
+    "stack": "Android Studio, Kotlin, Gemini API",
+    "estado": "em desenvolvimento",
+    "palavrasChave": [
+      "aplicativo android",
+      "gemini api",
+      "desenvolvimento local",
+      "ia studio",
+      "android studio",
+      "kotlin"
+    ]
+  },
+  {
+    "nome": "unal",
+    "oQueE": "O projeto é um site que apresenta informações sobre a UNAL Sustentável, provavelmente com conteúdo relacionado a sustentabilidade e iniciativas ambientais.",
+    "problema": "Resolver a necessidade de divulgação e apresentação de informações sobre a UNAL Sustentável para o público interessado.",
+    "stack": "[",
+    "estado": "em uso",
+    "palavrasChave": [
+      "sustentabilidade",
+      "UNAL",
+      "site institucional",
+      "divulgação ambiental",
+      "iniciativas sustentáveis"
+    ]
+  },
+  {
+    "nome": "v0-nhabindidur",
+    "oQueE": "Sistema de Gestão para Supermercados, com funcionalidades de PDV (Ponto de Venda), scanner de código de barras e impressão de recibo.",
+    "problema": "Resolve a necessidade de supermercados e mercados de terem um sistema completo para gestão e venda de produtos, com agilidade e eficiência.",
+    "stack": "[",
+    "estado": "em desenvolvimento",
+    "palavrasChave": [
+      "PDV",
+      "sistema de gestão",
+      "supermercado",
+      "scanner de código de barras",
+      "Next.js",
+      "Supabase"
+    ]
+  },
+  {
+    "nome": "v0-style-dna-ai",
+    "oQueE": "Plataforma de consultoria de estilo impulsionada por IA generativa, que analisa fotos de rosto e sugere penteados e acessórios personalizados.",
+    "problema": "Ajuda usuários a encontrar looks personalizados e acessíveis, com foco em diversidade e empoderamento, resolvendo o problema de falta de orientação de estilo personalizada.",
+    "stack": "Next.js 16, React 19, TypeScript, Tailwind CSS, Supabase, Google Gemini, Mercado Pago, Stripe",
+    "estado": "em desenvolvimento",
+    "palavrasChave": [
+      "IA generativa",
+      "consultoria de estilo",
+      "recomendações personalizadas",
+      "Supabase",
+      "Google Gemini",
+      "e-commerce de moda"
+    ]
+  },
+  {
+    "nome": "vozlipe",
+    "oQueE": "Um aplicativo Android que permite executar e implantar um app criado no AI Studio, utilizando a API Gemini.",
+    "problema": "Resolver a necessidade de executar e testar um aplicativo de IA localmente, antes de sua implantação, para usuários que desenvolvem apps no AI Studio.",
+    "stack": "Android Studio, Kotlin, Gradle, API Gemini",
+    "estado": "em desenvolvimento",
+    "palavrasChave": [
+      "aplicativo android",
+      "api gemini",
+      "desenvolvimento de ia",
+      "execução local",
+      "ai studio"
+    ]
+  }
+]

@@ -45,4 +45,38 @@ describe('startServer', () => {
 
     server.close();
   });
+
+  it('POST /api/pesquisar dispara a ação assíncrona e reporta etapas', async () => {
+    const state: AppState = { geradoEm: 'antes', totalProjetos: 0, avaliacoes: [] };
+    const server = startServer(state, 0, {
+      pesquisar: async (etapa) => {
+        etapa('trabalhando');
+        await new Promise((r) => setTimeout(r, 30));
+        state.geradoEm = 'depois';
+      },
+    });
+    await new Promise<void>((r) => server.on('listening', r));
+    const addr = server.address();
+    const porta = typeof addr === 'object' && addr ? addr.port : 0;
+
+    const disparo = await fetch(`http://127.0.0.1:${porta}/api/pesquisar`, { method: 'POST' });
+    expect(disparo.status).toBe(202);
+
+    const ocupado = await fetch(`http://127.0.0.1:${porta}/api/pesquisar`, { method: 'POST' });
+    expect(ocupado.status).toBe(409);
+
+    for (let i = 0; i < 50; i++) {
+      const s = (await (await fetch(`http://127.0.0.1:${porta}/api/status`)).json()) as AppState;
+      if (s.pesquisa && !s.pesquisa.rodando && s.pesquisa.terminadaEm) break;
+      await new Promise((r) => setTimeout(r, 20));
+    }
+    const fim = (await (await fetch(`http://127.0.0.1:${porta}/api/status`)).json()) as AppState;
+    expect(fim.geradoEm).toBe('depois');
+    expect(fim.pesquisa?.etapa).toBe('concluída');
+
+    const semAcao = await fetch(`http://127.0.0.1:${porta}/api/sincronizar`, { method: 'POST' });
+    expect(semAcao.status).toBe(404);
+
+    server.close();
+  });
 });
