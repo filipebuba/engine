@@ -13,6 +13,7 @@ export type Edital = {
   locais: string[];
   estagios: string[];
   prazo: string | null;
+  linkInscricao: string | null;
 };
 
 const TIPOS: TipoRecurso[] = ['fundo_perdido', 'subvencao', 'emprestimo', 'equity', 'aceleracao'];
@@ -50,6 +51,7 @@ export function parseEdital(raw: unknown): Edital {
     locais: lista(o.locais),
     estagios: lista(o.estagios),
     prazo,
+    linkInscricao: typeof o.linkInscricao === 'string' && o.linkInscricao.startsWith('http') ? o.linkInscricao : null,
   };
 }
 

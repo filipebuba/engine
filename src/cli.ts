@@ -7,6 +7,7 @@ import { avaliar, type Avaliacao } from './match.js';
 import { juizLocal, redatorLocal } from './juiz.js';
 import { carregar, salvar } from './store.js';
 import { caminhoRadar, caminhoProjetos } from './config.js';
+import { buscarLinkInscricao } from './inscricao.js';
 import { startServer, type AppState } from './server.js';
 import type { Edital } from './edital.js';
 
@@ -149,6 +150,15 @@ function serve(portaArg: string | undefined): number {
       await varrerRadar();
       etapa('importando editais do radar');
       try { importarDoRadar(); } catch { /* radar ausente: julga o banco atual */ }
+      etapa('procurando o formulário de inscrição de cada edital');
+      {
+        const editais = carregar<Edital[]>(ARQ_EDITAIS, []);
+        for (const e of editais) {
+          if (e.linkInscricao) continue;
+          e.linkInscricao = await buscarLinkInscricao(e.url);
+        }
+        salvar(ARQ_EDITAIS, editais);
+      }
       etapa('julgando com o modelo local');
       const novo = await matchCore(etapa);
       state.geradoEm = novo.geradoEm;

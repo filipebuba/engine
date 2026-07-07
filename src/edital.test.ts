@@ -23,6 +23,13 @@ describe('parseEdital', () => {
     expect(e.tipoRecurso).toBeNull();
     expect(e.portes).toEqual([]);
     expect(e.prazo).toBeNull();
+    expect(e.linkInscricao).toBeNull();
+  });
+  it('aceita linkInscricao http e rejeita não-http', () => {
+    const com = parseEdital({ id: 'x', titulo: 't', fonte: 'f', url: 'u', linkInscricao: 'https://form.gov.br/x' });
+    expect(com.linkInscricao).toBe('https://form.gov.br/x');
+    const sem = parseEdital({ id: 'x', titulo: 't', fonte: 'f', url: 'u', linkInscricao: 'javascript:x' });
+    expect(sem.linkInscricao).toBeNull();
   });
   it('rejeita sem id', () => {
     expect(() => parseEdital({ titulo: 't', fonte: 'f', url: 'u' })).toThrow('edital inválido: falta id');
