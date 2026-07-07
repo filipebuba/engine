@@ -8,6 +8,7 @@ describe('startServer', () => {
     const state: AppState = {
       geradoEm: '2026-07-06 21:00',
       totalProjetos: 52,
+      projetos: [{ nome: 'demo', oQueE: 'app', problema: '', stack: '', estado: 'protótipo', palavrasChave: ['pme'] }],
       avaliacoes: [{
         edital: parseEdital({ id: 'x', titulo: 'Edital Teste', fonte: 'f', url: 'https://ex.com', prazo: '2026-09-30' }),
         elegibilidade: { elegivel: true, motivos: [] },
@@ -27,6 +28,9 @@ describe('startServer', () => {
     const api = await (await fetch(`http://127.0.0.1:${porta}/api/status`)).json() as AppState;
     expect(api.totalProjetos).toBe(52);
     expect(api.avaliacoes).toHaveLength(1);
+
+    const projetos = await (await fetch(`http://127.0.0.1:${porta}/api/projetos`)).json() as unknown[];
+    expect(projetos).toHaveLength(1);
 
     const res = await fetch(`http://127.0.0.1:${porta}/`);
     const html = await res.text();

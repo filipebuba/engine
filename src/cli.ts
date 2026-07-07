@@ -81,6 +81,9 @@ async function match(): Promise<number> {
 function serve(portaArg: string | undefined): number {
   const porta = Number(portaArg) > 0 ? Number(portaArg) : 4200;
   const state = carregar<AppState>(ARQ_AVALIACOES, { geradoEm: '(sem avaliação — rode coleta e match)', totalProjetos: 0, avaliacoes: [] });
+  const dirProjetos = caminhoProjetos();
+  state.projetos = dirProjetos ? carregarProjetos(dirProjetos) : [];
+  if (state.totalProjetos === 0) state.totalProjetos = state.projetos.length;
   startServer(state, porta);
   console.log(`🌐 EDITAL MATCH no ar: http://localhost:${porta}`);
   return 0;

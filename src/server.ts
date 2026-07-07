@@ -1,10 +1,12 @@
 import { createServer, type Server } from 'node:http';
 import type { Avaliacao } from './match.js';
+import type { Projeto } from './perfil.js';
 
 export type AppState = {
   geradoEm: string;
   totalProjetos: number;
   avaliacoes: Avaliacao[];
+  projetos?: Projeto[];
 };
 
 const PAGINA = `<!doctype html>
@@ -236,6 +238,11 @@ export function startServer(state: AppState, porta: number): Server {
     if (req.url === '/api/status') {
       res.writeHead(200, { 'Content-Type': 'application/json' });
       res.end(JSON.stringify(state));
+      return;
+    }
+    if (req.url === '/api/projetos') {
+      res.writeHead(200, { 'Content-Type': 'application/json' });
+      res.end(JSON.stringify(state.projetos ?? []));
       return;
     }
     res.writeHead(200, { 'Content-Type': 'text/html; charset=utf-8' });
