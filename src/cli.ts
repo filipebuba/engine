@@ -22,8 +22,10 @@ const ARQ_EDITAIS = 'data/editais.json';
 const ARQ_AVALIACOES = 'data/avaliacoes.json';
 const ARQ_PORTFOLIO = 'data/portfolio.json';
 
-// Perfil do dogfood: pesquisador-desenvolvedor independente, BR + GW.
-const PERFIL: PerfilBase = { porte: 'pessoa_fisica', locais: ['BR', 'GW'] };
+// Perfil do proponente — configurável em data/perfil.json (ex.: {"porte":"startup","locais":["BR"]}).
+// Padrão: pesquisador-desenvolvedor pessoa física, BR + GW. Mudou de figura jurídica?
+// Edite o arquivo e rode o match de novo — a elegibilidade dura usa ESTE porte.
+const PERFIL: PerfilBase = carregar<PerfilBase>('data/perfil.json', { porte: 'pessoa_fisica', locais: ['BR', 'GW'] });
 
 // A "fotografia" do portfólio: lê a pasta real UMA vez e grava o skill do juiz.
 function fotografarPortfolio(): Projeto[] {
