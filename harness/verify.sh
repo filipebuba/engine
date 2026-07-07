@@ -11,7 +11,7 @@ if ! VOUT=$(npx vitest run --passWithNoTests 2>&1); then
   printf '%s\n' "$VOUT" | tail -30
   echo "FALHA: testes"; exit 1
 fi
-printf '%s\n' "$VOUT" | grep -E "Test Files|Tests " | head -2
+printf '%s\n' "$VOUT" | grep -E "Test Files|Tests " | head -2 || true  # sem testes ainda: grep vazio não é erro (classe 047)
 
 # exec-smoke: quando o CLI existir, ele roda de verdade (sem args → uso, exit != 0)
 if npx tsc -p tsconfig.build.json >/dev/null 2>&1 && [ -f dist/cli.js ]; then
