@@ -22,4 +22,16 @@ describe('extrairLinkInscricao', () => {
   it('html sem links devolve null', () => {
     expect(extrairLinkInscricao('<p>sem âncoras</p>', BASE)).toBeNull();
   });
+  it('botão de compartilhar NUNCA vira formulário (o texto do tweet fala em inscrições)', () => {
+    const html = `
+      <a href="https://twitter.com/intent/tweet?text=Edital%20PRORROGA%20inscri%C3%A7%C3%B5es">Tweet</a>
+      <a href="https://www.facebook.com/sharer/sharer.php?u=x">Compartilhar inscrições</a>`;
+    expect(extrairLinkInscricao(html, BASE)).toBeNull();
+  });
+  it('com social bloqueado, acha o formulário legítimo seguinte', () => {
+    const html = `
+      <a href="https://twitter.com/intent/tweet?text=inscri%C3%A7%C3%B5es">Tweet</a>
+      <a href="/inscricao/form">Inscreva-se</a>`;
+    expect(extrairLinkInscricao(html, BASE)).toBe('https://orgao.gov.br/inscricao/form');
+  });
 });

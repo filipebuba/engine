@@ -7,7 +7,7 @@ import { avaliar, type Avaliacao } from './match.js';
 import { juizLocal, redatorLocal } from './juiz.js';
 import { carregar, salvar } from './store.js';
 import { caminhoRadar, caminhoProjetos } from './config.js';
-import { buscarLinkInscricao } from './inscricao.js';
+import { buscarLinkInscricao, linkSuspeito } from './inscricao.js';
 import { startServer, type AppState } from './server.js';
 import type { Edital } from './edital.js';
 
@@ -154,7 +154,7 @@ function serve(portaArg: string | undefined): number {
       {
         const editais = carregar<Edital[]>(ARQ_EDITAIS, []);
         for (const e of editais) {
-          if (e.linkInscricao) continue;
+          if (e.linkInscricao && !linkSuspeito(e.linkInscricao)) continue;
           e.linkInscricao = await buscarLinkInscricao(e.url);
         }
         salvar(ARQ_EDITAIS, editais);

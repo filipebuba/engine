@@ -2,13 +2,20 @@
 // Padrão do runner: script determinístico extrai âncoras; palavras-chave decidem.
 const CHAVES = /inscri|candidat|submiss|cadastr|formul[aá]rio|participar|aplicar|apply/i;
 const IGNORA = /^(mailto:|tel:|javascript:|#)/i;
+// compartilhamento social e afins NUNCA são formulário de inscrição (falso-positivo clássico:
+// o botão "tuitar" carrega o título do edital com a palavra "inscrições" no texto)
+const BLOQUEIA = /twitter\.com|x\.com\/intent|facebook\.com|api\.whatsapp|wa\.me|web\.whatsapp|linkedin\.com\/(share|sharing)|t\.me\/|pinterest\.|instagram\.com|\/share|\/sharer|intent\/tweet|feed=|\.(jpg|jpeg|png|gif|css|js)(\?|$)/i;
+
+export function linkSuspeito(url: string): boolean {
+  return BLOQUEIA.test(url);
+}
 
 export function extrairLinkInscricao(html: string, urlBase: string): string | null {
   const ancoras = [...html.matchAll(/<a\b[^>]*href=["']([^"'#][^"']*)["'][^>]*>([\s\S]{0,200}?)<\/a>/gi)];
   const candidatos: { href: string; texto: string }[] = [];
   for (const m of ancoras) {
     const href = m[1].trim();
-    if (IGNORA.test(href)) continue;
+    if (IGNORA.test(href) || BLOQUEIA.test(href)) continue;
     const texto = m[2].replace(/<[^>]+>/g, ' ').replace(/\s+/g, ' ').trim();
     candidatos.push({ href, texto });
   }

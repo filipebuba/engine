@@ -11,7 +11,8 @@
     "setores": [],
     "locais": [],
     "estagios": [],
-    "prazo": null
+    "prazo": null,
+    "linkInscricao": "https://www.gov.br/mcti/pt-br/acesso-a-informacao/processo-eletronico/cadastro-usuario-externo"
   },
   {
     "id": "radar-https-santotech-com-br-ub-rio-ia-2026-edital-startups-ia-inv",
@@ -25,7 +26,8 @@
     "setores": [],
     "locais": [],
     "estagios": [],
-    "prazo": null
+    "prazo": null,
+    "linkInscricao": "https://twitter.com/intent/tweet?url=https%3A%2F%2Fsantotech.com.br%2Fub-rio-ia-2026-edital-startups-ia-investimento-industria%2F&#038;text=Edital%20Hub%20Rio.IA%202026%20PRORROGA%20inscri%C3%A7%C3%B5es%20para%20startups%20de%20IA%20com%20investimento%20de%20R%24%20640%20mil"
   },
   {
     "id": "radar-https-cienciaetecnologia-prefeitura-rio-noticias-rio-ia-pref",
@@ -39,7 +41,8 @@
     "setores": [],
     "locais": [],
     "estagios": [],
-    "prazo": null
+    "prazo": null,
+    "linkInscricao": null
   },
   {
     "id": "radar-https-mover-fundep-ufmg-br-chamada-agentes-ia",
@@ -53,6 +56,52 @@
     "setores": [],
     "locais": [],
     "estagios": [],
-    "prazo": null
+    "prazo": null,
+    "linkInscricao": "https://www.eventweb.com.br/rota2030/home-event/"
+  },
+  {
+    "id": "radar-https-gazetadaamazonia-com-br-24-04-2026-tecnologias-digitai",
+    "titulo": "Governo Federal lança edital de R$ 300 milhões para impulsionar ...",
+    "fonte": "radar-editais",
+    "url": "https://gazetadaamazonia.com.br/24/04/2026/tecnologias-digitais-brasil/",
+    "resumo": "O edital menciona impulso a tecnologias digitais e IA, áreas relacionadas ao projeto SoberanIA, que envolve IA soberana e treinamento local de modelos.",
+    "valorMax": null,
+    "tipoRecurso": null,
+    "portes": [],
+    "setores": [],
+    "locais": [],
+    "estagios": [],
+    "prazo": null,
+    "linkInscricao": "https://gazetadaamazonia.com.br/06/07/2026/festival-amazonia-em-movimento/"
+  },
+  {
+    "id": "radar-https-rochamarques-com-br-bndes-e-finep-lancam-edital-de-r-2",
+    "titulo": "BNDES e Finep lançam edital de R$ 205 milhões para fundo de ...",
+    "fonte": "radar-editais",
+    "url": "https://rochamarques.com.br/bndes-e-finep-lancam-edital-de-r-205-milhoes-para-fundo-de-inteligencia-artificial/",
+    "resumo": "O edital do BNDES e Finep está alinhado com o Plano Brasileiro de Inteligência Artificial (PBIA) e busca investir em startups que utilizam IA como elemento central de seus modelos de negócio, o que se encaixa diretamente no projeto SoberanIA, que visa a criação de IA soberana e local.",
+    "valorMax": null,
+    "tipoRecurso": null,
+    "portes": [],
+    "setores": [],
+    "locais": [],
+    "estagios": [],
+    "prazo": null,
+    "linkInscricao": null
+  },
+  {
+    "id": "radar-https-openclaw-ia-br-blog-rio-ia-2026-como-conseguir-financi",
+    "titulo": "Rio.IA 2026: Como Conseguir R$80 Mil para Sua Startup de Inteligência ...",
+    "fonte": "radar-editais",
+    "url": "https://openclaw.ia.br/blog/rio-ia-2026-como-conseguir-financiamento-startup/",
+    "resumo": "O edital Rio.IA 2026 está alinhado com o projeto SoberanIA, que visa desenvolver IA soberana e alinhada ao PBIA, com foco em inovação e aplicação prática em cenários reais.",
+    "valorMax": null,
+    "tipoRecurso": null,
+    "portes": [],
+    "setores": [],
+    "locais": [],
+    "estagios": [],
+    "prazo": null,
+    "linkInscricao": null
   }
 ]
