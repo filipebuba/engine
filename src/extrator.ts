@@ -1,4 +1,5 @@
 import type { Edital, TipoRecurso } from './edital.js';
+import { postOllama } from './juiz.js';
 
 // Extração COMPLETA dos dados do edital a partir da página real.
 // Padrão do runner: o script baixa e limpa o texto; o modelo local extrai; o merge
@@ -87,16 +88,10 @@ export function extratorLocal(opts: { url?: string; model?: string; numCtx?: num
       'Rigor: liste um campo APENAS quando o texto o afirmar (portes só se houver exigência explícita; locais só se houver restrição). Sem informação => null ou lista vazia. NUNCA invente valor ou data.',
     ].join('\n');
 
-    const res = await fetch(`${url}/api/generate`, {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({
-        model, prompt, stream: false, format: 'json', think: false,
-        options: { temperature: 0.1, num_ctx: numCtx },
-      }),
-    });
-    if (!res.ok) throw new Error(`extrator local: ollama respondeu ${res.status}`);
-    const data = (await res.json()) as { response?: string };
+    const data = await postOllama(url, {
+      model, prompt, stream: false, format: 'json', think: false,
+      options: { temperature: 0.1, num_ctx: numCtx },
+    }, 'extrator local');
     return normalizarExtracao(JSON.parse(data.response ?? '{}'));
   };
 }

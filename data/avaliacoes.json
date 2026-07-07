@@ -1,46 +1,7 @@
 {
-  "geradoEm": "07/07/2026, 01:42:42",
+  "geradoEm": "07/07/2026, 02:26:19",
   "totalProjetos": 52,
   "avaliacoes": [
-    {
-      "edital": {
-        "id": "radar-https-www-gov-br-mcti-pt-br-acompanhe-o-mcti-noticias-2026-0",
-        "titulo": "Edital de R$ 300 milhões apoia empresas no desenvolvimento de ...",
-        "fonte": "radar-editais",
-        "url": "https://www.gov.br/mcti/pt-br/acompanhe-o-mcti/noticias/2026/04/edital-de-r-300-milhoes-apoia-empresas-no-desenvolvimento-de-tecnologias-digitais-avancadas",
-        "resumo": "O edital apoia o desenvolvimento de tecnologias digitais avançadas, incluindo inteligência artificial, e o projeto SoberanIA alinha-se diretamente com essa área, visando IA soberana e local.",
-        "valorMax": null,
-        "tipoRecurso": null,
-        "portes": [],
-        "setores": [],
-        "locais": [],
-        "estagios": [],
-        "prazo": null,
-        "linkInscricao": "https://www.gov.br/mcti/pt-br/acesso-a-informacao/processo-eletronico/cadastro-usuario-externo",
-        "extraidoEm": null
-      },
-      "elegibilidade": {
-        "elegivel": true,
-        "motivos": []
-      },
-      "projeto": "sobera_skill",
-      "score": {
-        "alinhamento": 18,
-        "impacto": 16,
-        "competitividade": 14,
-        "viabilidade": 12,
-        "historico": 6,
-        "diversidade": 8
-      },
-      "total": 74,
-      "badge": "alta",
-      "porQue": "O projeto sobera_skill está alinhado com o foco do edital em tecnologias digitais avançadas, especialmente IA soberana. Apesar da falta de informações detalhadas sobre o histórico de entregas, o projeto demonstra viabilidade técnica e potencial impacto na capacitação de IA local.",
-      "passos": [
-        "Refinar o escopo do projeto para alinhar-se diretamente com os objetivos do edital de IA soberana",
-        "Desenvolver uma proposta com métricas claras de impacto social e econômico",
-        "Incluir evidências de colaboração com instituições locais ou internacionais para reforçar a viabilidade e o impacto."
-      ]
-    },
     {
       "edital": {
         "id": "radar-https-santotech-com-br-ub-rio-ia-2026-edital-startups-ia-inv",
@@ -205,11 +166,11 @@
       },
       "total": 74,
       "badge": "alta",
-      "porQue": "O projeto 'sobera_skill' está alinhado com o edital devido ao foco em IA e treinamento local, conforme mencionado no resumo do edital sobre o SoberanIA. No entanto, há informações insuficientes sobre o prazo e os requisitos específicos do edital.",
+      "porQue": "O projeto 'sobera_skill' está alinhado com o edital devido ao foco em IA e treinamento local, elementos centrais do SoberanIA. No entanto, há pouca informação sobre o edital para pontuar com mais precisão.",
       "passos": [
-        "Avaliar a alinhamento com os objetivos do SoberanIA e as tecnologias digitais mencionadas no edital",
-        "Desenvolver uma proposta detalhada com metas claras de treinamento local de modelos de IA",
-        "Demonstrar a viabilidade técnica e a capacidade de execução com recursos disponíveis no Brasil e Guiné-Bissau"
+        "Avaliar a relevância do projeto 'sobera_skill' para o edital com base em critérios de IA soberana e treinamento local.",
+        "Identificar possíveis parcerias ou recursos adicionais para reforçar a viabilidade do projeto.",
+        "Desenvolver uma proposta detalhada que destaque a capacidade de execução e impacto social do projeto."
       ]
     },
     {

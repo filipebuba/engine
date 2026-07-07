@@ -2,6 +2,28 @@ import type { Edital } from './edital.js';
 import type { Juiz, Parecer, ScoreSoft } from './match.js';
 import { PESOS } from './match.js';
 
+// Chamada única ao Ollama com retry e causa REAL no erro (undici esconde o código
+// em e.cause — "fetch failed" sozinho não diagnostica nada; pago em 07/07).
+export async function postOllama(url: string, corpo: unknown, rotulo: string): Promise<{ response?: string }> {
+  let causa = '';
+  for (let tentativa = 1; tentativa <= 2; tentativa++) {
+    try {
+      const res = await fetch(`${url}/api/generate`, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(corpo),
+      });
+      if (!res.ok) throw new Error(`ollama respondeu ${res.status}`);
+      return (await res.json()) as { response?: string };
+    } catch (e) {
+      const c = (e as { cause?: { code?: string; message?: string } }).cause;
+      causa = c?.code ?? c?.message ?? (e instanceof Error ? e.message : String(e));
+      if (tentativa === 1) await new Promise((r) => setTimeout(r, 2500));
+    }
+  }
+  throw new Error(`${rotulo}: falha ao chamar ollama (${causa})`);
+}
+
 // Redator 100% local: rascunho de proposta em markdown, ancorado nos dados reais.
 export type Redator = (e: Edital, projetoResumo: string, parecer: string) => Promise<string>;
 
@@ -29,16 +51,10 @@ export function redatorLocal(opts: { url?: string; model?: string; numCtx?: numb
       'Rigor: baseie-se APENAS nos dados acima. Onde faltar informação real, escreva [COMPLETAR: o que falta]. NUNCA invente números, parceiros ou métricas.',
     ].join('\n');
 
-    const res = await fetch(`${url}/api/generate`, {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({
-        model, prompt, stream: false, think: false,
-        options: { temperature: 0.4, num_ctx: numCtx },
-      }),
-    });
-    if (!res.ok) throw new Error(`redator local: ollama respondeu ${res.status}`);
-    const data = (await res.json()) as { response?: string };
+    const data = await postOllama(url, {
+      model, prompt, stream: false, think: false,
+      options: { temperature: 0.4, num_ctx: numCtx },
+    }, 'redator local');
     const texto = (data.response ?? '').trim();
     if (!texto) throw new Error('redator local: resposta vazia');
     return texto;
@@ -85,16 +101,10 @@ export function estrategistaLocal(opts: { url?: string; model?: string; numCtx?:
       `Regras: cronograma REVERSO a partir do prazo (${e.prazo ?? 'sem prazo: datas null'}) com 4-6 marcos, todas as datas entre HOJE e o prazo; documentos só os típicos deste TIPO de chamada (marque incertos com "provável:"); NUNCA invente critérios que o texto não deu.`,
     ].join('\n');
 
-    const res = await fetch(`${url}/api/generate`, {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({
-        model, prompt, stream: false, format: 'json', think: false,
-        options: { temperature: 0.3, num_ctx: numCtx },
-      }),
-    });
-    if (!res.ok) throw new Error(`estrategista local: ollama respondeu ${res.status}`);
-    const data = (await res.json()) as { response?: string };
+    const data = await postOllama(url, {
+      model, prompt, stream: false, format: 'json', think: false,
+      options: { temperature: 0.3, num_ctx: numCtx },
+    }, 'estrategista local');
     const j = JSON.parse(data.response ?? '{}') as Record<string, unknown>;
     const textos = (v: unknown): string[] => (Array.isArray(v) ? v.filter((x): x is string => typeof x === 'string') : []);
     const cronograma = Array.isArray(j.cronograma)
@@ -151,16 +161,10 @@ export function juizLocal(opts: { url?: string; model?: string; numCtx?: number 
       'Rigor: não invente dados do edital; pontue baixo quando a informação for insuficiente e diga isso no por_que.',
     ].join('\n');
 
-    const res = await fetch(`${url}/api/generate`, {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({
-        model, prompt, stream: false, format: 'json', think: false,
-        options: { temperature: 0.2, num_ctx: numCtx },
-      }),
-    });
-    if (!res.ok) throw new Error(`juiz local: ollama respondeu ${res.status}`);
-    const data = (await res.json()) as { response?: string };
+    const data = await postOllama(url, {
+      model, prompt, stream: false, format: 'json', think: false,
+      options: { temperature: 0.2, num_ctx: numCtx },
+    }, 'juiz local');
     let j: Record<string, unknown> = {};
     try {
       j = JSON.parse(data.response ?? '{}') as Record<string, unknown>;
