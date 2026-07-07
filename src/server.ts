@@ -3,6 +3,7 @@ import type { Avaliacao } from './match.js';
 import type { Projeto } from './perfil.js';
 
 export type Pesquisa = { rodando: boolean; etapa: string; terminadaEm: string | null };
+export type Proposta = { rodando: boolean; texto: string; geradaEm: string | null };
 
 export type AppState = {
   geradoEm: string;
@@ -10,10 +11,12 @@ export type AppState = {
   avaliacoes: Avaliacao[];
   projetos?: Projeto[];
   pesquisa?: Pesquisa;
+  propostas?: Record<string, Proposta>;
 };
 
 export type Acao = (etapa: (msg: string) => void) => Promise<void>;
-export type Acoes = { pesquisar?: Acao; sincronizar?: Acao };
+export type AcaoProposta = (editalId: string, etapa: (msg: string) => void) => Promise<string>;
+export type Acoes = { pesquisar?: Acao; sincronizar?: Acao; proposta?: AcaoProposta };
 
 const PAGINA = `<!doctype html>
 <html lang="pt-BR">
@@ -242,7 +245,7 @@ setInterval(tick, 5000);
 export function startServer(state: AppState, porta: number, acoes: Acoes = {}): Server {
   state.pesquisa = { rodando: false, etapa: '', terminadaEm: null };
 
-  const dispara = (nome: keyof Acoes, res: import('node:http').ServerResponse): void => {
+  const dispara = (nome: 'pesquisar' | 'sincronizar', res: import('node:http').ServerResponse): void => {
     const acao = acoes[nome];
     if (!acao) {
       res.writeHead(404, { 'Content-Type': 'application/json' });
@@ -270,9 +273,44 @@ export function startServer(state: AppState, porta: number, acoes: Acoes = {}): 
     res.end(JSON.stringify({ ok: true }));
   };
 
+  state.propostas = state.propostas ?? {};
+
   const server = createServer((req, res) => {
     if (req.method === 'POST' && req.url === '/api/pesquisar') { dispara('pesquisar', res); return; }
     if (req.method === 'POST' && req.url === '/api/sincronizar') { dispara('sincronizar', res); return; }
+    if (req.method === 'POST' && req.url === '/api/proposta') {
+      let corpo = '';
+      req.on('data', (c) => { corpo += c; });
+      req.on('end', () => {
+        let id = '';
+        try { id = String((JSON.parse(corpo || '{}') as { id?: unknown }).id ?? ''); } catch { /* corpo inválido */ }
+        if (!acoes.proposta || !id) {
+          res.writeHead(id ? 404 : 400, { 'Content-Type': 'application/json' });
+          res.end(JSON.stringify({ erro: id ? 'redator não disponível' : 'informe {"id": "<edital>"}' }));
+          return;
+        }
+        if (state.pesquisa?.rodando) {
+          res.writeHead(409, { 'Content-Type': 'application/json' });
+          res.end(JSON.stringify({ erro: 'motor ocupado', etapa: state.pesquisa.etapa }));
+          return;
+        }
+        state.pesquisa = { rodando: true, etapa: 'redigindo a proposta com o modelo local', terminadaEm: null };
+        if (state.propostas) state.propostas[id] = { rodando: true, texto: '', geradaEm: null };
+        acoes.proposta(id, (msg) => { if (state.pesquisa) state.pesquisa.etapa = msg; })
+          .then((texto) => {
+            if (state.propostas) state.propostas[id] = { rodando: false, texto, geradaEm: new Date().toLocaleString('pt-BR') };
+            state.pesquisa = { rodando: false, etapa: 'proposta pronta', terminadaEm: new Date().toLocaleString('pt-BR') };
+          })
+          .catch((e) => {
+            const msg = e instanceof Error ? e.message : String(e);
+            if (state.propostas) state.propostas[id] = { rodando: false, texto: `erro: ${msg}`, geradaEm: null };
+            state.pesquisa = { rodando: false, etapa: `erro: ${msg}`, terminadaEm: new Date().toLocaleString('pt-BR') };
+          });
+        res.writeHead(202, { 'Content-Type': 'application/json' });
+        res.end(JSON.stringify({ ok: true }));
+      });
+      return;
+    }
     if (req.url === '/api/status') {
       res.writeHead(200, { 'Content-Type': 'application/json' });
       res.end(JSON.stringify(state));

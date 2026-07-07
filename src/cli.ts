@@ -4,7 +4,7 @@ import { execFile } from 'node:child_process';
 import { deRadar } from './coleta.js';
 import { carregarProjetos, resumoPortfolio, type PerfilBase, type Projeto } from './perfil.js';
 import { avaliar, type Avaliacao } from './match.js';
-import { juizLocal } from './juiz.js';
+import { juizLocal, redatorLocal } from './juiz.js';
 import { carregar, salvar } from './store.js';
 import { caminhoRadar, caminhoProjetos } from './config.js';
 import { startServer, type AppState } from './server.js';
@@ -160,6 +160,16 @@ function serve(portaArg: string | undefined): number {
       const ps = fotografarPortfolio();
       state.projetos = ps;
       state.totalProjetos = ps.length;
+    },
+    proposta: async (editalId, etapa) => {
+      const aval = state.avaliacoes.find((a) => a.edital.id === editalId);
+      if (!aval) throw new Error(`edital não avaliado: ${editalId}`);
+      const proj = (state.projetos ?? []).find((p) => p.nome === aval.projeto);
+      const resumo = proj
+        ? `${proj.nome} — ${proj.oQueE}\nproblema/cliente: ${proj.problema}\nstack: ${proj.stack}\nestado: ${proj.estado}\npalavras-chave: ${proj.palavrasChave.join(', ')}`
+        : (aval.projeto || '[COMPLETAR: projeto não identificado]');
+      etapa(`redigindo rascunho para "${aval.edital.titulo.slice(0, 40)}…" com o modelo local`);
+      return redatorLocal()(aval.edital, resumo, aval.porQue);
     },
   });
   console.log(`🌐 EDITAL MATCH no ar: http://localhost:${porta}`);

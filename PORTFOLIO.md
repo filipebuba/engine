@@ -1,6 +1,6 @@
 # PORTFÓLIO — descrição dos produtos (o "skill" do juiz)
 
-> Fotografia dos cartões PROJETO.md (52 produtos) em 06/07/2026, 22:08:19.
+> Fotografia dos cartões PROJETO.md (52 produtos) em 06/07/2026, 22:18:58.
 > O juiz local usa ESTA fotografia — não varre mais a pasta a cada match.
 > Nasceu produto novo ou cartão mudou? Regenerar: node dist/cli.js perfil (ou botão "sincronizar" no app).
 
