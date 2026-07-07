@@ -4,7 +4,7 @@ import { execFile } from 'node:child_process';
 import { deRadar } from './coleta.js';
 import { carregarProjetos, resumoPortfolio, type PerfilBase, type Projeto } from './perfil.js';
 import { avaliar, type Avaliacao } from './match.js';
-import { juizLocal, redatorLocal } from './juiz.js';
+import { juizLocal, redatorLocal, estrategistaLocal } from './juiz.js';
 import { carregar, salvar } from './store.js';
 import { caminhoRadar, caminhoProjetos } from './config.js';
 import { baixarPagina, extrairLinkInscricao, linkSuspeito } from './inscricao.js';
@@ -195,6 +195,16 @@ function serve(portaArg: string | undefined): number {
         : (aval.projeto || '[COMPLETAR: projeto não identificado]');
       etapa(`redigindo rascunho para "${aval.edital.titulo.slice(0, 40)}…" com o modelo local`);
       return redatorLocal()(aval.edital, resumo, aval.porQue);
+    },
+    playbook: async (editalId, etapa) => {
+      const aval = state.avaliacoes.find((a) => a.edital.id === editalId);
+      if (!aval) throw new Error(`edital não avaliado: ${editalId}`);
+      const proj = (state.projetos ?? []).find((p) => p.nome === aval.projeto);
+      const resumo = proj
+        ? `${proj.nome} — ${proj.oQueE}\nestado: ${proj.estado}\npalavras-chave: ${proj.palavrasChave.join(', ')}`
+        : (aval.projeto || '[COMPLETAR: projeto não identificado]');
+      etapa(`montando playbook de "${aval.edital.titulo.slice(0, 40)}…" com o modelo local`);
+      return estrategistaLocal()(aval.edital, resumo, aval.porQue);
     },
   };
 

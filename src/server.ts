@@ -4,6 +4,7 @@ import type { Projeto } from './perfil.js';
 
 export type Pesquisa = { rodando: boolean; etapa: string; terminadaEm: string | null };
 export type Proposta = { rodando: boolean; texto: string; geradaEm: string | null };
+export type PlaybookEstado = { rodando: boolean; dados: unknown | null; geradoEm: string | null; erro?: string };
 
 export type AppState = {
   geradoEm: string;
@@ -12,11 +13,13 @@ export type AppState = {
   projetos?: Projeto[];
   pesquisa?: Pesquisa;
   propostas?: Record<string, Proposta>;
+  playbooks?: Record<string, PlaybookEstado>;
 };
 
 export type Acao = (etapa: (msg: string) => void) => Promise<void>;
 export type AcaoProposta = (editalId: string, etapa: (msg: string) => void) => Promise<string>;
-export type Acoes = { pesquisar?: Acao; sincronizar?: Acao; proposta?: AcaoProposta };
+export type AcaoPlaybook = (editalId: string, etapa: (msg: string) => void) => Promise<unknown>;
+export type Acoes = { pesquisar?: Acao; sincronizar?: Acao; proposta?: AcaoProposta; playbook?: AcaoPlaybook };
 
 // Executa uma ação com trava de ocupado — usada pelo HTTP e pelo agendador interno.
 export function executarAcao(state: AppState, acoes: Acoes, nome: 'pesquisar' | 'sincronizar'): 'ok' | 'ocupado' | 'indisponivel' {
@@ -273,8 +276,42 @@ export function startServer(state: AppState, porta: number, acoes: Acoes = {}): 
   };
 
   state.propostas = state.propostas ?? {};
+  state.playbooks = state.playbooks ?? {};
 
   const server = createServer((req, res) => {
+    if (req.method === 'POST' && req.url === '/api/playbook') {
+      let corpo = '';
+      req.on('data', (c) => { corpo += c; });
+      req.on('end', () => {
+        let id = '';
+        try { id = String((JSON.parse(corpo || '{}') as { id?: unknown }).id ?? ''); } catch { /* corpo inválido */ }
+        if (!acoes.playbook || !id) {
+          res.writeHead(id ? 404 : 400, { 'Content-Type': 'application/json' });
+          res.end(JSON.stringify({ erro: id ? 'estrategista não disponível' : 'informe {"id": "<edital>"}' }));
+          return;
+        }
+        if (state.pesquisa?.rodando) {
+          res.writeHead(409, { 'Content-Type': 'application/json' });
+          res.end(JSON.stringify({ erro: 'motor ocupado', etapa: state.pesquisa.etapa }));
+          return;
+        }
+        state.pesquisa = { rodando: true, etapa: 'montando o playbook com o modelo local', terminadaEm: null };
+        if (state.playbooks) state.playbooks[id] = { rodando: true, dados: null, geradoEm: null };
+        acoes.playbook(id, (msg) => { if (state.pesquisa) state.pesquisa.etapa = msg; })
+          .then((dados) => {
+            if (state.playbooks) state.playbooks[id] = { rodando: false, dados, geradoEm: new Date().toLocaleString('pt-BR') };
+            state.pesquisa = { rodando: false, etapa: 'playbook pronto', terminadaEm: new Date().toLocaleString('pt-BR') };
+          })
+          .catch((e) => {
+            const msg = e instanceof Error ? e.message : String(e);
+            if (state.playbooks) state.playbooks[id] = { rodando: false, dados: null, geradoEm: null, erro: msg };
+            state.pesquisa = { rodando: false, etapa: `erro: ${msg}`, terminadaEm: new Date().toLocaleString('pt-BR') };
+          });
+        res.writeHead(202, { 'Content-Type': 'application/json' });
+        res.end(JSON.stringify({ ok: true }));
+      });
+      return;
+    }
     if (req.method === 'POST' && req.url === '/api/pesquisar') { dispara('pesquisar', res); return; }
     if (req.method === 'POST' && req.url === '/api/sincronizar') { dispara('sincronizar', res); return; }
     if (req.method === 'POST' && req.url === '/api/proposta') {
