@@ -18,6 +18,26 @@ export type Acao = (etapa: (msg: string) => void) => Promise<void>;
 export type AcaoProposta = (editalId: string, etapa: (msg: string) => void) => Promise<string>;
 export type Acoes = { pesquisar?: Acao; sincronizar?: Acao; proposta?: AcaoProposta };
 
+// Executa uma ação com trava de ocupado — usada pelo HTTP e pelo agendador interno.
+export function executarAcao(state: AppState, acoes: Acoes, nome: 'pesquisar' | 'sincronizar'): 'ok' | 'ocupado' | 'indisponivel' {
+  const acao = acoes[nome];
+  if (!acao) return 'indisponivel';
+  if (state.pesquisa?.rodando) return 'ocupado';
+  state.pesquisa = { rodando: true, etapa: 'iniciando', terminadaEm: null };
+  acao((msg) => { if (state.pesquisa) state.pesquisa.etapa = msg; })
+    .then(() => {
+      state.pesquisa = { rodando: false, etapa: 'concluída', terminadaEm: new Date().toLocaleString('pt-BR') };
+    })
+    .catch((e) => {
+      state.pesquisa = {
+        rodando: false,
+        etapa: `erro: ${e instanceof Error ? e.message : String(e)}`,
+        terminadaEm: new Date().toLocaleString('pt-BR'),
+      };
+    });
+  return 'ok';
+}
+
 const PAGINA = `<!doctype html>
 <html lang="pt-BR">
 <head>
@@ -246,31 +266,10 @@ export function startServer(state: AppState, porta: number, acoes: Acoes = {}): 
   state.pesquisa = { rodando: false, etapa: '', terminadaEm: null };
 
   const dispara = (nome: 'pesquisar' | 'sincronizar', res: import('node:http').ServerResponse): void => {
-    const acao = acoes[nome];
-    if (!acao) {
-      res.writeHead(404, { 'Content-Type': 'application/json' });
-      res.end(JSON.stringify({ erro: `ação "${nome}" não disponível neste servidor` }));
-      return;
-    }
-    if (state.pesquisa?.rodando) {
-      res.writeHead(409, { 'Content-Type': 'application/json' });
-      res.end(JSON.stringify({ erro: 'já há uma ação em andamento', etapa: state.pesquisa.etapa }));
-      return;
-    }
-    state.pesquisa = { rodando: true, etapa: 'iniciando', terminadaEm: null };
-    acao((msg) => { if (state.pesquisa) state.pesquisa.etapa = msg; })
-      .then(() => {
-        state.pesquisa = { rodando: false, etapa: 'concluída', terminadaEm: new Date().toLocaleString('pt-BR') };
-      })
-      .catch((e) => {
-        state.pesquisa = {
-          rodando: false,
-          etapa: `erro: ${e instanceof Error ? e.message : String(e)}`,
-          terminadaEm: new Date().toLocaleString('pt-BR'),
-        };
-      });
-    res.writeHead(202, { 'Content-Type': 'application/json' });
-    res.end(JSON.stringify({ ok: true }));
+    const r = executarAcao(state, acoes, nome);
+    const codigo = r === 'indisponivel' ? 404 : r === 'ocupado' ? 409 : 202;
+    res.writeHead(codigo, { 'Content-Type': 'application/json' });
+    res.end(JSON.stringify(r === 'ok' ? { ok: true } : { erro: r, etapa: state.pesquisa?.etapa ?? '' }));
   };
 
   state.propostas = state.propostas ?? {};

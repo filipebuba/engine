@@ -83,7 +83,7 @@ export function extratorLocal(opts: { url?: string; model?: string; numCtx?: num
       textoPagina,
       '',
       'Responda APENAS JSON:',
-      '{"resumo": "<2-3 frases objetivas do que o edital financia>", "valor_max_reais": <número em reais por projeto, ou null>, "tipo_recurso": "fundo_perdido"|"subvencao"|"emprestimo"|"equity"|"aceleracao"|null, "portes": ["MEI","ME","EPP","media","grande","pessoa_fisica","startup","ICT"], "setores": ["<setores-alvo>"], "locais": ["BR","<UF ou país se restrito>"], "estagios": ["ideacao","validacao","tracao","escala"], "prazo": "<AAAA-MM-DD da inscrição, APENAS se data explícita no texto>", "orgao": "<órgão/instituição que lança, ex: Finep>"}',
+      '{"resumo": "<2-3 frases objetivas do que o edital financia, em português>", "valor_max_reais": <número em reais por projeto (converta moeda estrangeira se a taxa NÃO for necessária: senão null), ou null>, "tipo_recurso": "fundo_perdido"|"subvencao"|"emprestimo"|"equity"|"aceleracao"|null, "portes": ["MEI","ME","EPP","media","grande","pessoa_fisica","startup","ICT"], "setores": ["<setores-alvo>"], "locais": ["BR","GW","<UF/país/região se restrito>","global" se aberto ao mundo todo], "estagios": ["ideacao","validacao","tracao","escala"], "prazo": "<AAAA-MM-DD da inscrição, APENAS se data explícita no texto>", "orgao": "<órgão/instituição que lança, ex: Finep, Horizon Europe, UNDP>"}',
       'Rigor: liste um campo APENAS quando o texto o afirmar (portes só se houver exigência explícita; locais só se houver restrição). Sem informação => null ou lista vazia. NUNCA invente valor ou data.',
     ].join('\n');
 

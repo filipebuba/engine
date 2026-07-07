@@ -9,7 +9,7 @@ import { carregar, salvar } from './store.js';
 import { caminhoRadar, caminhoProjetos } from './config.js';
 import { baixarPagina, extrairLinkInscricao, linkSuspeito } from './inscricao.js';
 import { aplicarExtracao, extratorLocal, paraTexto } from './extrator.js';
-import { startServer, type AppState } from './server.js';
+import { startServer, executarAcao, type AppState, type Acoes } from './server.js';
 import type { Edital } from './edital.js';
 
 const USO = `uso: edital-match <comando>
@@ -147,7 +147,7 @@ function serve(portaArg: string | undefined): number {
   try { state.projetos = obterPortfolio(); } catch { state.projetos = []; }
   if (state.totalProjetos === 0) state.totalProjetos = state.projetos.length;
 
-  startServer(state, porta, {
+  const acoes: Acoes = {
     pesquisar: async (etapa) => {
       etapa('varrendo a web (radar de editais)');
       await varrerRadar();
@@ -196,8 +196,24 @@ function serve(portaArg: string | undefined): number {
       etapa(`redigindo rascunho para "${aval.edital.titulo.slice(0, 40)}…" com o modelo local`);
       return redatorLocal()(aval.edital, resumo, aval.porQue);
     },
-  });
+  };
+
+  startServer(state, porta, acoes);
   console.log(`🌐 EDITAL MATCH no ar: http://localhost:${porta}`);
+
+  // Piloto automático (pedido do dono): atualiza ao SUBIR e, ligado, 1× por dia.
+  // EM_AUTO=0 desliga; EM_ATUALIZA_HORAS muda o intervalo (padrão 24).
+  if (process.env.EM_AUTO !== '0') {
+    const horas = Number(process.env.EM_ATUALIZA_HORAS) > 0 ? Number(process.env.EM_ATUALIZA_HORAS) : 24;
+    console.log(`⟳ atualização automática: na subida e a cada ${horas}h (EM_AUTO=0 desliga)`);
+    setTimeout(() => {
+      if (executarAcao(state, acoes, 'pesquisar') === 'ok') console.log('⟳ pesquisa de subida disparada');
+    }, 3000);
+    setInterval(() => {
+      const r = executarAcao(state, acoes, 'pesquisar');
+      console.log(`⟳ pesquisa diária: ${r === 'ok' ? 'disparada' : r}`);
+    }, horas * 3600 * 1000);
+  }
   return 0;
 }
 

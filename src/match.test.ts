@@ -28,6 +28,12 @@ describe('elegibilidadeDura', () => {
     const br = { ...aberto, locais: ['BR'] };
     expect(elegibilidadeDura(br, PERFIL, HOJE).elegivel).toBe(true);
   });
+  it('edital global/worldwide é elegível de qualquer lugar', () => {
+    const mundial = { ...aberto, locais: ['global'] };
+    expect(elegibilidadeDura(mundial, PERFIL, HOJE).elegivel).toBe(true);
+    const eu = { ...aberto, locais: ['EU'] };
+    expect(elegibilidadeDura(eu, PERFIL, HOJE).elegivel).toBe(false);
+  });
   it('acumula múltiplos motivos', () => {
     const ruim = { ...aberto, prazo: '2026-01-01', portes: ['ME'], locais: ['PT'] };
     expect(elegibilidadeDura(ruim, PERFIL, HOJE).motivos).toHaveLength(3);

@@ -12,7 +12,8 @@ export function elegibilidadeDura(e: Edital, p: PerfilBase, hojeISO: string): El
   if (e.portes.length > 0 && !e.portes.includes(p.porte)) {
     motivos.push(`porte "${p.porte}" fora do público (${e.portes.join('/')})`);
   }
-  if (e.locais.length > 0 && !e.locais.some((l) => p.locais.includes(l))) {
+  const abertoAoMundo = e.locais.some((l) => /global|internacional|mundial|worldwide/i.test(l));
+  if (e.locais.length > 0 && !abertoAoMundo && !e.locais.some((l) => p.locais.includes(l))) {
     motivos.push(`localização (${p.locais.join('/')}) fora do escopo (${e.locais.join('/')})`);
   }
   return { elegivel: motivos.length === 0, motivos };
