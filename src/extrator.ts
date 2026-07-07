@@ -69,7 +69,7 @@ export function aplicarExtracao(e: Edital, x: Extracao): Edital {
 export type Extrator = (titulo: string, textoPagina: string) => Promise<Extracao>;
 
 export function extratorLocal(opts: { url?: string; model?: string; numCtx?: number } = {}): Extrator {
-  const url = opts.url ?? process.env.OLLAMA_URL ?? 'http://localhost:11434';
+  const url = opts.url ?? process.env.OLLAMA_URL ?? 'http://127.0.0.1:11434';
   const model = opts.model ?? process.env.EM_MODEL ?? 'qwen3:14b';
   const numCtx = opts.numCtx ?? 8192;
 

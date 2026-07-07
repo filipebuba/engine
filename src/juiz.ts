@@ -6,7 +6,7 @@ import { PESOS } from './match.js';
 export type Redator = (e: Edital, projetoResumo: string, parecer: string) => Promise<string>;
 
 export function redatorLocal(opts: { url?: string; model?: string; numCtx?: number } = {}): Redator {
-  const url = opts.url ?? process.env.OLLAMA_URL ?? 'http://localhost:11434';
+  const url = opts.url ?? process.env.OLLAMA_URL ?? 'http://127.0.0.1:11434';
   const model = opts.model ?? process.env.EM_MODEL ?? 'qwen3:14b';
   const numCtx = opts.numCtx ?? 8192;
 
@@ -57,7 +57,7 @@ export type Playbook = {
 export type Estrategista = (e: Edital, projetoResumo: string, parecer: string) => Promise<Playbook>;
 
 export function estrategistaLocal(opts: { url?: string; model?: string; numCtx?: number } = {}): Estrategista {
-  const url = opts.url ?? process.env.OLLAMA_URL ?? 'http://localhost:11434';
+  const url = opts.url ?? process.env.OLLAMA_URL ?? 'http://127.0.0.1:11434';
   const model = opts.model ?? process.env.EM_MODEL ?? 'qwen3:14b';
   const numCtx = opts.numCtx ?? 8192;
 
@@ -120,7 +120,7 @@ export function estrategistaLocal(opts: { url?: string; model?: string; numCtx?:
 
 // Juiz 100% local (Ollama/qwen) — decisão de produto: soberania, custo marginal zero.
 export function juizLocal(opts: { url?: string; model?: string; numCtx?: number } = {}): Juiz {
-  const url = opts.url ?? process.env.OLLAMA_URL ?? 'http://localhost:11434';
+  const url = opts.url ?? process.env.OLLAMA_URL ?? 'http://127.0.0.1:11434';
   const model = opts.model ?? process.env.EM_MODEL ?? 'qwen3:14b';
   const numCtx = opts.numCtx ?? 8192;
 

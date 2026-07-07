@@ -18,50 +18,70 @@
   {
     "id": "radar-https-santotech-com-br-ub-rio-ia-2026-edital-startups-ia-inv",
     "titulo": "Edital Hub Rio.IA 2026 PRORROGA inscrições para startups de IA com ...",
-    "fonte": "radar-editais",
+    "fonte": "Agência Brasileira de Desenvolvimento Industrial (ABDI), Prefeitura do Rio de Janeiro e PUC-Rio por meio do Instituto ECOA",
     "url": "https://santotech.com.br/ub-rio-ia-2026-edital-startups-ia-investimento-industria/",
     "resumo": "O edital busca soluções de IA para a indústria brasileira, alinhadas ao PBIA, e o projeto SoberanIA se enquadra em IA soberana e local, com potencial para contribuir com soluções de IA para a indústria.",
-    "valorMax": null,
-    "tipoRecurso": null,
-    "portes": [],
-    "setores": [],
-    "locais": [],
-    "estagios": [],
-    "prazo": null,
+    "valorMax": 80000,
+    "tipoRecurso": "subvencao",
+    "portes": [
+      "startup"
+    ],
+    "setores": [
+      "indústria"
+    ],
+    "locais": [
+      "BR"
+    ],
+    "estagios": [
+      "validacao"
+    ],
+    "prazo": "2026-02-06",
     "linkInscricao": null,
-    "extraidoEm": null
+    "extraidoEm": "2026-07-07T04:28:31.299Z"
   },
   {
     "id": "radar-https-cienciaetecnologia-prefeitura-rio-noticias-rio-ia-pref",
     "titulo": "Rio.IA: Prefeitura apresenta seu primeiro edital para startups de IA ...",
-    "fonte": "radar-editais",
+    "fonte": "Secretaria Municipal de Ciência, Tecnologia e Inovação (SMCT), em parceria com a Agência Brasileira de Desenvolvimento Industrial (ABDI) e a PUC-Rio",
     "url": "https://cienciaetecnologia.prefeitura.rio/noticias/rio-ia-prefeitura-do-rio-apresenta-no-dia-4-seu-primeiro-edital-para-startups-de-ia-com-solucoes-para-a-industria/",
     "resumo": "O edital busca soluções de IA para a indústria, alinhando-se diretamente com o projeto SoberanIA, que desenvolve IA soberana e local com foco em custo baixo e aplicabilidade prática.",
-    "valorMax": null,
-    "tipoRecurso": null,
-    "portes": [],
-    "setores": [],
-    "locais": [],
-    "estagios": [],
+    "valorMax": 80000,
+    "tipoRecurso": "fundo_perdido",
+    "portes": [
+      "startup"
+    ],
+    "setores": [
+      "indústria"
+    ],
+    "locais": [
+      "BR"
+    ],
+    "estagios": [
+      "validacao"
+    ],
     "prazo": null,
     "linkInscricao": null,
-    "extraidoEm": null
+    "extraidoEm": "2026-07-07T04:30:22.350Z"
   },
   {
     "id": "radar-https-mover-fundep-ufmg-br-chamada-agentes-ia",
     "titulo": "Fundep abre Chamada Pública para projetos de Inteligência Artificial",
-    "fonte": "radar-editais",
+    "fonte": "Fundep",
     "url": "https://mover.fundep.ufmg.br/chamada-agentes-ia/",
     "resumo": "A chamada é específica para o setor automotivo e exige colaboração entre ICTs e empresas da cadeia automotiva, o que não se alinha com o perfil do proponente (pesquisador independente) e os projetos do portfólio.",
-    "valorMax": null,
+    "valorMax": 2000000,
     "tipoRecurso": null,
     "portes": [],
-    "setores": [],
-    "locais": [],
+    "setores": [
+      "automotivo"
+    ],
+    "locais": [
+      "BR"
+    ],
     "estagios": [],
-    "prazo": null,
+    "prazo": "2026-01-28",
     "linkInscricao": "https://www.eventweb.com.br/rota2030/home-event/",
-    "extraidoEm": null
+    "extraidoEm": "2026-07-07T04:32:12.659Z"
   },
   {
     "id": "radar-https-gazetadaamazonia-com-br-24-04-2026-tecnologias-digitai",
@@ -77,38 +97,58 @@
     "estagios": [],
     "prazo": null,
     "linkInscricao": null,
-    "extraidoEm": null
+    "extraidoEm": "2026-07-07T04:33:31.128Z"
   },
   {
     "id": "radar-https-rochamarques-com-br-bndes-e-finep-lancam-edital-de-r-2",
     "titulo": "BNDES e Finep lançam edital de R$ 205 milhões para fundo de ...",
-    "fonte": "radar-editais",
+    "fonte": "BNDES, Finep",
     "url": "https://rochamarques.com.br/bndes-e-finep-lancam-edital-de-r-205-milhoes-para-fundo-de-inteligencia-artificial/",
     "resumo": "O edital do BNDES e Finep está alinhado com o Plano Brasileiro de Inteligência Artificial (PBIA) e busca investir em startups que utilizam IA como elemento central de seus modelos de negócio, o que se encaixa diretamente no projeto SoberanIA, que visa a criação de IA soberana e local.",
     "valorMax": null,
-    "tipoRecurso": null,
-    "portes": [],
-    "setores": [],
-    "locais": [],
-    "estagios": [],
+    "tipoRecurso": "fundo_perdido",
+    "portes": [
+      "startup"
+    ],
+    "setores": [
+      "Inteligência Artificial"
+    ],
+    "locais": [
+      "BR",
+      "Norte",
+      "Nordeste",
+      "Centro-Oeste"
+    ],
+    "estagios": [
+      "tracao",
+      "escala"
+    ],
     "prazo": null,
     "linkInscricao": null,
-    "extraidoEm": null
+    "extraidoEm": "2026-07-07T04:35:22.278Z"
   },
   {
     "id": "radar-https-openclaw-ia-br-blog-rio-ia-2026-como-conseguir-financi",
     "titulo": "Rio.IA 2026: Como Conseguir R$80 Mil para Sua Startup de Inteligência ...",
-    "fonte": "radar-editais",
+    "fonte": "ABDI, Prefeitura do Rio de Janeiro, PUC-Rio",
     "url": "https://openclaw.ia.br/blog/rio-ia-2026-como-conseguir-financiamento-startup/",
     "resumo": "O edital Rio.IA 2026 está alinhado com o projeto SoberanIA, que visa desenvolver IA soberana e alinhada ao PBIA, com foco em inovação e aplicação prática em cenários reais.",
-    "valorMax": null,
-    "tipoRecurso": null,
-    "portes": [],
-    "setores": [],
-    "locais": [],
-    "estagios": [],
+    "valorMax": 80000,
+    "tipoRecurso": "subvencao",
+    "portes": [
+      "startup"
+    ],
+    "setores": [
+      "indústria"
+    ],
+    "locais": [
+      "BR"
+    ],
+    "estagios": [
+      "validacao"
+    ],
     "prazo": null,
     "linkInscricao": null,
-    "extraidoEm": null
+    "extraidoEm": "2026-07-07T04:37:18.900Z"
   }
 ]
