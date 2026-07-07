@@ -28,6 +28,10 @@ describe('extrairLinkInscricao', () => {
       <a href="https://www.facebook.com/sharer/sharer.php?u=x">Compartilhar inscrições</a>`;
     expect(extrairLinkInscricao(html, BASE)).toBeNull();
   });
+  it('matéria de jornal (data no caminho) nunca vira formulário', () => {
+    const html = `<a href="https://gazeta.com.br/06/07/2026/festival-x/">Inscrições abertas para o festival</a>`;
+    expect(extrairLinkInscricao(html, BASE)).toBeNull();
+  });
   it('com social bloqueado, acha o formulário legítimo seguinte', () => {
     const html = `
       <a href="https://twitter.com/intent/tweet?text=inscri%C3%A7%C3%B5es">Tweet</a>

@@ -1,5 +1,5 @@
 {
-  "geradoEm": "06/07/2026, 22:32:13",
+  "geradoEm": "06/07/2026, 22:35:51",
   "totalProjetos": 52,
   "avaliacoes": [
     {
@@ -25,19 +25,19 @@
       "projeto": "sobera_skill",
       "score": {
         "alinhamento": 18,
-        "impacto": 15,
+        "impacto": 16,
         "competitividade": 14,
         "viabilidade": 12,
-        "historico": 5,
+        "historico": 6,
         "diversidade": 8
       },
-      "total": 72,
+      "total": 74,
       "badge": "alta",
-      "porQue": "O projeto sobera_skill está alinhado com o foco do edital em IA soberana e tecnologias digitais avançadas, embora haja pouca informação sobre o edital para avaliar com mais profundidade. O projeto demonstra potencial de impacto e inovação na área de IA.",
+      "porQue": "O projeto sobera_skill alinha-se com o foco do edital em IA soberana, embora a informação sobre o edital seja limitada. Há evidências de inovação e potencial impacto na capacitação de IA local.",
       "passos": [
-        "Avaliar a capacidade de execução do projeto com base nas tecnologias utilizadas (WSL, treinamento de IA)",
-        "Identificar alinhamentos com o objetivo do edital de promover IA soberana",
-        "Verificar se há evidências de entregas anteriores no portfólio que reforcem a viabilidade e o histórico do proponente"
+        "Avaliar a capacidade de execução do projeto em ambientes WSL e Ubuntu",
+        "Identificar parcerias locais para implementação em Guiné-Bissau",
+        "Desenvolver uma proposta detalhada para alinhamento com os objetivos do edital"
       ]
     },
     {
@@ -54,7 +54,7 @@
         "locais": [],
         "estagios": [],
         "prazo": null,
-        "linkInscricao": "https://twitter.com/intent/tweet?url=https%3A%2F%2Fsantotech.com.br%2Fub-rio-ia-2026-edital-startups-ia-investimento-industria%2F&#038;text=Edital%20Hub%20Rio.IA%202026%20PRORROGA%20inscri%C3%A7%C3%B5es%20para%20startups%20de%20IA%20com%20investimento%20de%20R%24%20640%20mil"
+        "linkInscricao": null
       },
       "elegibilidade": {
         "elegivel": true,
@@ -63,19 +63,19 @@
       "projeto": "sobera_skill",
       "score": {
         "alinhamento": 15,
-        "impacto": 18,
-        "competitividade": 16,
-        "viabilidade": 12,
-        "historico": 6,
+        "impacto": 15,
+        "competitividade": 12,
+        "viabilidade": 10,
+        "historico": 5,
         "diversidade": 8
       },
-      "total": 75,
-      "badge": "alta",
-      "porQue": "O projeto 'sobera_skill' está alinhado com o edital de IA soberana, pois envolve treinamento e execução de habilidades de IA em ambiente local (WSL Ubuntu), o que se encaixa no conceito de IA soberana. Apesar da falta de informações detalhadas sobre o edital, o projeto demonstra potencial inovador e relevância para a indústria brasileira.",
+      "total": 65,
+      "badge": "media",
+      "porQue": "O projeto 'sobera_skill' está alinhado com o foco em IA soberana do edital, mas há pouca informação sobre como ele se aplica diretamente à indústria brasileira. A pontuação é moderada devido à falta de detalhes sobre aplicação industrial e impacto no setor.",
       "passos": [
-        "Realizar uma análise detalhada do PBIA (Plano Brasileiro de Inteligência Artificial) para garantir alinhamento com os objetivos do edital.",
-        "Desenvolver uma proposta que destaque a soberania e a capacidade de execução local do projeto.",
-        "Incluir exemplos de aplicação prática da IA soberana no contexto industrial brasileiro."
+        "Explicar como a plataforma 'sobera_skill' pode ser adaptada para soluções de IA aplicadas à indústria brasileira",
+        "Demonstrar casos de uso específicos no setor industrial",
+        "Desenvolver parcerias com empresas brasileiras para validar a aplicação do projeto no contexto industrial"
       ]
     },
     {
@@ -98,22 +98,22 @@
         "elegivel": true,
         "motivos": []
       },
-      "projeto": "sankofa",
+      "projeto": "sobera_skill",
       "score": {
-        "alinhamento": 18,
-        "impacto": 18,
-        "competitividade": 15,
-        "viabilidade": 12,
-        "historico": 6,
-        "diversidade": 10
+        "alinhamento": 15,
+        "impacto": 12,
+        "competitividade": 10,
+        "viabilidade": 10,
+        "historico": 5,
+        "diversidade": 8
       },
-      "total": 79,
-      "badge": "alta",
-      "porQue": "O projeto Sankofa alinha-se com o edital Rio.IA ao utilizar IA para fins educativos e culturais, com foco em história africana, algo que pode ser ampliado para contextos locais como Guiné-Bissau. No entanto, há pouca informação sobre o edital para avaliar com mais precisão.",
+      "total": 60,
+      "badge": "media",
+      "porQue": "O projeto sobera_skill está alinhado com o foco do edital em IA soberana e aplicabilidade prática, embora informações sobre o edital sejam limitadas. O projeto demonstra capacidade de execução e inovação em IA, com potencial impacto no contexto local.",
       "passos": [
-        "Realizar uma análise detalhada do edital Rio.IA para identificar requisitos específicos de IA aplicada à indústria e educação",
-        "Ajustar o projeto Sankofa para incluir funcionalidades alinhadas com o setor industrial ou governamental, se necessário",
-        "Desenvolver uma proposta de execução com base nas capacidades técnicas e recursos do proponente"
+        "Avaliar a relevância do projeto sobera_skill para as necessidades industriais descritas no edital",
+        "Identificar possíveis parcerias locais para validação e implementação",
+        "Desenvolver uma proposta detalhada alinhada aos objetivos do edital e ao contexto da indústria local"
       ]
     },
     {
@@ -147,11 +147,11 @@
       },
       "total": 50,
       "badge": "media",
-      "porQue": "O edital tem foco no setor automotivo e na colaboração entre ICTs e empresas da cadeia automotiva, o que não se alinha diretamente com o projeto 'bufala', que é uma solução de IA comunitária para assistência rural. No entanto, o projeto apresenta alto impacto e viabilidade, e pode ser adaptado com esforço adicional.",
+      "porQue": "O edital tem foco no setor automotivo e na colaboração entre ICTs e empresas da cadeia automotiva, o que não se alinha diretamente com o projeto 'bufala', que é uma IA comunitária para assistência rural. No entanto, o projeto apresenta alto impacto social e inovação, e sua viabilidade é boa com base nas tecnologias utilizadas.",
       "passos": [
-        "Revisar o edital para identificar se há espaço para projetos de IA com foco em setores não automotivos",
-        "Avaliar a possibilidade de adaptar o projeto 'bufala' para incluir elementos relacionados ao setor automotivo, se aplicável",
-        "Contatar a Fundep para esclarecer se há flexibilidade na chamada para projetos de IA em outros setores"
+        "Revisar o edital para identificar se há subáreas ou necessidades de IA em contextos rurais ou de baixa conectividade que possam ser alinhadas ao projeto",
+        "Adaptar a proposta para destacar a relevância da IA comunitária em contextos de baixa conectividade, que podem ser relevantes para o setor automotivo em áreas rurais",
+        "Buscar parcerias com empresas da cadeia automotiva que atuem em regiões rurais ou com necessidades de tecnologia adaptada para baixa conectividade"
       ]
     },
     {
@@ -177,19 +177,19 @@
       "projeto": "sobera_skill",
       "score": {
         "alinhamento": 18,
-        "impacto": 16,
+        "impacto": 15,
         "competitividade": 14,
         "viabilidade": 12,
         "historico": 6,
         "diversidade": 8
       },
-      "total": 74,
+      "total": 73,
       "badge": "alta",
-      "porQue": "O projeto 'sobera_skill' está alinhado com o edital devido ao foco em IA e treinamento local, conforme mencionado no edital sobre 'SoberanIA'. Apesar da informação limitada sobre o edital, o projeto demonstra potencial para contribuir com IA soberana.",
+      "porQue": "O projeto 'sobera_skill' está alinhado com o edital devido ao foco em IA e treinamento local, conforme mencionado no resumo do edital sobre o SoberanIA. Apesar da falta de detalhes sobre prazo e requisitos específicos do edital, o projeto demonstra potencial de impacto e inovação.",
       "passos": [
-        "Avaliar a capacidade de integrar o projeto com as diretrizes do edital de IA soberana",
-        "Desenvolver uma proposta detalhada com metas de treinamento local de modelos de IA",
-        "Demonstrar a viabilidade técnica e o impacto esperado no contexto de tecnologias digitais no Brasil e Guiné-Bissau"
+        "Realizar uma análise detalhada do edital para garantir alinhamento com os requisitos técnicos e objetivos estratégicos.",
+        "Desenvolver um plano de execução com metas claras de treinamento local de modelos de IA e demonstração de resultados.",
+        "Fortalecer a documentação do projeto para destacar a viabilidade e o impacto social e tecnológico no contexto da Guiné-Bissau e do Brasil."
       ]
     },
     {
@@ -215,19 +215,19 @@
       "projeto": "sobera_skill",
       "score": {
         "alinhamento": 15,
-        "impacto": 18,
-        "competitividade": 16,
-        "viabilidade": 12,
+        "impacto": 15,
+        "competitividade": 12,
+        "viabilidade": 10,
         "historico": 5,
         "diversidade": 8
       },
-      "total": 74,
-      "badge": "alta",
-      "porQue": "O projeto sobera_skill está alinhado com o foco em IA soberana do edital, mas há pouca informação sobre o estágio de desenvolvimento e a capacidade de escala. O impacto é alto devido ao foco em treinamento de IA e execução local, o que pode contribuir para a soberania tecnológica.",
+      "total": 65,
+      "badge": "media",
+      "porQue": "O projeto 'sobera_skill' está alinhado com o foco em IA soberana do edital, mas há pouca informação sobre o escopo e objetivos específicos do projeto. A pontuação é moderada devido à falta de detalhes claros sobre como o projeto se encaixa no Plano Brasileiro de Inteligência Artificial (PBIA).",
       "passos": [
-        "Desenvolver um plano de escalabilidade para o projeto sobera_skill",
-        "Realizar testes de performance e validação de modelos de IA no ambiente WSL",
-        "Estabelecer parcerias com instituições locais para demonstração e implementação prática da solução"
+        "Explicar claramente como o projeto 'sobera_skill' contribui para a IA soberana e local",
+        "Detalhar o alinhamento com o PBIA e o edital BNDES/Finep",
+        "Demonstrar a viabilidade técnica e o impacto potencial no contexto de inovação e desenvolvimento tecnológico em Guiné-Bissau e no Brasil"
       ]
     },
     {
@@ -254,18 +254,18 @@
       "score": {
         "alinhamento": 18,
         "impacto": 18,
-        "competitividade": 15,
+        "competitividade": 16,
         "viabilidade": 12,
         "historico": 5,
         "diversidade": 10
       },
-      "total": 78,
+      "total": 79,
       "badge": "alta",
-      "porQue": "O projeto bufala alinha-se com o objetivo do edital Rio.IA 2026 ao utilizar IA soberana (Gemma 3n offline) para apoiar comunidades rurais em Guiné-Bissau, com potencial de impacto social e inovação. No entanto, há pouca informação sobre histórico de entregas e viabilidade técnica detalhada.",
+      "porQue": "O projeto bufala alinha-se com o objetivo do edital Rio.IA 2026 ao utilizar IA soberana (Gemma 3n offline) para apoiar comunidades rurais em Guiné-Bissau, com potencial de impacto social e inovação. No entanto, há insuficiência de dados sobre histórico de entregas e escopo do projeto.",
       "passos": [
         "Desenvolver e testar o sistema Moransa com comunidades rurais em Guiné-Bissau",
-        "Integrar o Gemma 3n offline para garantir funcionamento em ambientes com baixa conectividade",
-        "Avaliar impacto e escalabilidade do projeto com apoio de parceiros locais e governamentais"
+        "Integrar o modelo Gemma 3n offline para garantir funcionalidade em ambientes com baixa conectividade",
+        "Avaliar impacto e escalabilidade com apoio de parceiros locais e governamentais"
       ]
     }
   ]

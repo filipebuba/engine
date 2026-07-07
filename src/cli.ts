@@ -7,7 +7,8 @@ import { avaliar, type Avaliacao } from './match.js';
 import { juizLocal, redatorLocal } from './juiz.js';
 import { carregar, salvar } from './store.js';
 import { caminhoRadar, caminhoProjetos } from './config.js';
-import { buscarLinkInscricao, linkSuspeito } from './inscricao.js';
+import { baixarPagina, extrairLinkInscricao, linkSuspeito } from './inscricao.js';
+import { aplicarExtracao, extratorLocal, paraTexto } from './extrator.js';
 import { startServer, type AppState } from './server.js';
 import type { Edital } from './edital.js';
 
@@ -150,12 +151,24 @@ function serve(portaArg: string | undefined): number {
       await varrerRadar();
       etapa('importando editais do radar');
       try { importarDoRadar(); } catch { /* radar ausente: julga o banco atual */ }
-      etapa('procurando o formulário de inscrição de cada edital');
+      etapa('lendo a página de cada edital (formulário + dados completos)');
       {
         const editais = carregar<Edital[]>(ARQ_EDITAIS, []);
-        for (const e of editais) {
-          if (e.linkInscricao && !linkSuspeito(e.linkInscricao)) continue;
-          e.linkInscricao = await buscarLinkInscricao(e.url);
+        const extrator = extratorLocal();
+        for (let i = 0; i < editais.length; i++) {
+          const e = editais[i];
+          const precisaLink = !e.linkInscricao || linkSuspeito(e.linkInscricao);
+          const precisaDados = !e.extraidoEm;
+          if (!precisaLink && !precisaDados) continue;
+          const html = await baixarPagina(e.url);
+          if (!html) continue;
+          if (precisaLink) e.linkInscricao = extrairLinkInscricao(html, e.url);
+          if (precisaDados) {
+            etapa(`extraindo dados ${i + 1}/${editais.length}: ${e.titulo.slice(0, 40)}`);
+            try {
+              editais[i] = aplicarExtracao(e, await extrator(e.titulo, paraTexto(html)));
+            } catch { /* extração é melhor-esforço; tenta de novo na próxima pesquisa */ }
+          }
         }
         salvar(ARQ_EDITAIS, editais);
       }

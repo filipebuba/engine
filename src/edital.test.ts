@@ -24,6 +24,7 @@ describe('parseEdital', () => {
     expect(e.portes).toEqual([]);
     expect(e.prazo).toBeNull();
     expect(e.linkInscricao).toBeNull();
+    expect(e.extraidoEm).toBeNull();
   });
   it('aceita linkInscricao http e rejeita não-http', () => {
     const com = parseEdital({ id: 'x', titulo: 't', fonte: 'f', url: 'u', linkInscricao: 'https://form.gov.br/x' });
