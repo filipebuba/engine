@@ -1,0 +1,46 @@
+{
+  "radar-https-www-gov-br-mcti-pt-br-acompanhe-o-mcti-noticias-2026-0": {
+    "playbook": {
+      "cronograma": [
+        {
+          "marco": "Revisão e atualização do plano de execução do projeto",
+          "data": "2026-07-14"
+        },
+        {
+          "marco": "Elaboração do resumo técnico e justificativa do projeto",
+          "data": "2026-07-21"
+        },
+        {
+          "marco": "Preparação de documentos prováveis: proposta técnica, plano de metas e orçamento",
+          "data": "2026-07-28"
+        },
+        {
+          "marco": "Revisão final com equipe multidisciplinar e ajustes conforme feedback",
+          "data": "2026-08-04"
+        },
+        {
+          "marco": "Submissão do projeto ao edital",
+          "data": "2026-08-11"
+        }
+      ],
+      "documentos": [
+        "proposta técnica",
+        "plano de metas",
+        "orçamento provável: plano financeiro",
+        "justificativa do projeto",
+        "documentos de capacitação da equipe"
+      ],
+      "competitividade": "O projeto possui forças em sua abordagem específica de execução local no WSL Ubuntu e alinhamento com a IA soberana. No entanto, a falta de detalhes sobre o edital e o prazo pode dificultar a elaboração de uma proposta completa e competitiva frente a concorrentes com informações mais claras.",
+      "dicas": [
+        "Destaque claramente a inovação em IA soberana e a utilização do WSL Ubuntu como diferencial técnico",
+        "garanta que a proposta técnica esteja alinhada com os objetivos de desenvolvimento de tecnologias digitais avançadas"
+      ],
+      "riscos": [
+        "Falta de informações sobre o prazo e valor máximo do edital pode levar a uma submissão mal alinhada com os requisitos reais",
+        "falta de detalhes sobre os critérios de avaliação pode resultar em uma proposta menos impactante"
+      ]
+    },
+    "parecer": "O projeto sobera_skill alinha-se com o foco do edital em tecnologias digitais avançadas, especialmente IA soberana, e apresenta um diferencial em execução local no ambiente WSL Ubuntu. Apesar da informação limitada sobre o edital, há evidências de inovação e potencial impacto na área de IA.",
+    "geradoEm": "2026-07-07T09:39:24.573Z"
+  }
+}

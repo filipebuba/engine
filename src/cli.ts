@@ -4,7 +4,7 @@ import { execFile } from 'node:child_process';
 import { deRadar } from './coleta.js';
 import { carregarProjetos, resumoPortfolio, type PerfilBase, type Projeto } from './perfil.js';
 import { avaliar, type Avaliacao } from './match.js';
-import { juizLocal, redatorLocal, estrategistaLocal } from './juiz.js';
+import { juizLocal, redatorLocal, estrategistaLocal, type Playbook } from './juiz.js';
 import { carregar, salvar, anexar } from './store.js';
 import { caminhoRadar, caminhoProjetos } from './config.js';
 import { baixarPagina, extrairLinkInscricao, linkSuspeito } from './inscricao.js';
@@ -23,6 +23,10 @@ const ARQ_AVALIACOES = 'data/avaliacoes.json';
 const ARQ_PORTFOLIO = 'data/portfolio.json';
 // dataset do juiz-LoRA: cada julgamento/extração/desfecho vira uma linha que nunca se perde
 const ARQ_TRAILS = 'data/trails.jsonl';
+// artefatos gerados sob demanda — PERSISTIDOS (antes viviam só em RAM e sumiam ao recarregar a página);
+// keyed por editalId, com o parecer que os gerou -> re-julgar (match) invalida e refaz automaticamente.
+const ARQ_PROPOSTAS = 'data/propostas.json';
+const ARQ_PLAYBOOKS = 'data/playbooks.json';
 
 // Perfil do proponente — configurável em data/perfil.json (ex.: {"porte":"startup","locais":["BR"]}).
 // Padrão: pesquisador-desenvolvedor pessoa física, BR + GW. Mudou de figura jurídica?
@@ -159,6 +163,15 @@ function serve(portaArg: string | undefined): number {
   try { state.projetos = obterPortfolio(); } catch { state.projetos = []; }
   if (state.totalProjetos === 0) state.totalProjetos = state.projetos.length;
 
+  // hidrata artefatos persistidos (disco -> RAM) para ficarem VISÍVEIS logo após reiniciar,
+  // sem o dono ter de re-clicar para regenerar. Fecha o "vivem em RAM" de ponta a ponta.
+  const pbDisk = carregar<Record<string, { playbook: Playbook; geradoEm: string }>>(ARQ_PLAYBOOKS, {});
+  state.playbooks = Object.fromEntries(Object.entries(pbDisk).map(
+    ([id, v]) => [id, { rodando: false, dados: v.playbook, geradoEm: v.geradoEm }]));
+  const prDisk = carregar<Record<string, { texto: string; geradoEm: string }>>(ARQ_PROPOSTAS, {});
+  state.propostas = Object.fromEntries(Object.entries(prDisk).map(
+    ([id, v]) => [id, { rodando: false, texto: v.texto, geradaEm: v.geradoEm }]));
+
   const acoes: Acoes = {
     pesquisar: async (etapa) => {
       etapa('varrendo a web (radar de editais)');
@@ -203,16 +216,25 @@ function serve(portaArg: string | undefined): number {
     proposta: async (editalId, etapa) => {
       const aval = state.avaliacoes.find((a) => a.edital.id === editalId);
       if (!aval) throw new Error(`edital não avaliado: ${editalId}`);
+      const cache = carregar<Record<string, { texto: string; parecer: string; geradoEm: string }>>(ARQ_PROPOSTAS, {});
+      const hit = cache[editalId];
+      if (hit && hit.parecer === aval.porQue) { etapa('proposta recuperada do disco (já redigida antes)'); return hit.texto; }
       const proj = (state.projetos ?? []).find((p) => p.nome === aval.projeto);
       const resumo = proj
         ? `${proj.nome} — ${proj.oQueE}\nproblema/cliente: ${proj.problema}\nstack: ${proj.stack}\nestado: ${proj.estado}\npalavras-chave: ${proj.palavrasChave.join(', ')}`
         : (aval.projeto || '[COMPLETAR: projeto não identificado]');
       etapa(`redigindo rascunho para "${aval.edital.titulo.slice(0, 40)}…" com o modelo local`);
-      return redatorLocal()(aval.edital, resumo, aval.porQue);
+      const texto = await redatorLocal()(aval.edital, resumo, aval.porQue);
+      cache[editalId] = { texto, parecer: aval.porQue, geradoEm: new Date().toISOString() };
+      salvar(ARQ_PROPOSTAS, cache);
+      return texto;
     },
     playbook: async (editalId, etapa) => {
       const aval = state.avaliacoes.find((a) => a.edital.id === editalId);
       if (!aval) throw new Error(`edital não avaliado: ${editalId}`);
+      const cache = carregar<Record<string, { playbook: Playbook; parecer: string; geradoEm: string }>>(ARQ_PLAYBOOKS, {});
+      const hit = cache[editalId];
+      if (hit && hit.parecer === aval.porQue) { etapa('playbook recuperado do disco (já montado antes)'); return hit.playbook; }
       const proj = (state.projetos ?? []).find((p) => p.nome === aval.projeto);
       const resumo = proj
         ? `${proj.nome} — ${proj.oQueE}\nestado: ${proj.estado}\npalavras-chave: ${proj.palavrasChave.join(', ')}`
@@ -220,6 +242,8 @@ function serve(portaArg: string | undefined): number {
       etapa(`montando playbook de "${aval.edital.titulo.slice(0, 40)}…" com o modelo local`);
       const pb = await estrategistaLocal()(aval.edital, resumo, aval.porQue);
       anexar(ARQ_TRAILS, { tipo: 'playbook', editalId, playbook: pb });
+      cache[editalId] = { playbook: pb, parecer: aval.porQue, geradoEm: new Date().toISOString() };
+      salvar(ARQ_PLAYBOOKS, cache);
       return pb;
     },
     desfecho: (editalId, status) => {

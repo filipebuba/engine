@@ -1,5 +1,5 @@
 {
-  "geradoEm": "07/07/2026, 03:06:53",
+  "geradoEm": "07/07/2026, 06:38:06",
   "totalProjetos": 52,
   "avaliacoes": [
     {
@@ -26,19 +26,19 @@
       "projeto": "sobera_skill",
       "score": {
         "alinhamento": 18,
-        "impacto": 16,
+        "impacto": 15,
         "competitividade": 14,
         "viabilidade": 12,
         "historico": 6,
         "diversidade": 8
       },
-      "total": 74,
+      "total": 73,
       "badge": "alta",
-      "porQue": "O projeto sobera_skill alinha-se com o foco do edital em IA soberana, embora a informação sobre o edital seja limitada. Há evidências de inovação e potencial impacto na capacitação de IA local.",
+      "porQue": "O projeto sobera_skill alinha-se com o foco do edital em tecnologias digitais avançadas, especialmente IA soberana, e apresenta um diferencial em execução local no ambiente WSL Ubuntu. Apesar da informação limitada sobre o edital, há evidências de inovação e potencial impacto na área de IA.",
       "passos": [
-        "Avaliar a capacidade de execução do projeto em ambiente WSL Ubuntu",
-        "Identificar oportunidades de escala e replicação em outros contextos locais",
-        "Reforçar a conexão com o objetivo do edital de desenvolvimento de tecnologias digitais avançadas"
+        "Desenvolver e testar o ambiente de treinamento e execução no WSL Ubuntu",
+        "Integrar com ferramentas de IA soberana e locais",
+        "Avaliar escalabilidade e adaptação para contextos de baixa conectividade"
       ]
     },
     {
@@ -205,11 +205,11 @@
       },
       "total": 75,
       "badge": "alta",
-      "porQue": "O projeto 'sobera_skill' está alinhado com o edital devido ao foco em IA e treinamento local, conforme mencionado no resumo do edital. Apesar da falta de detalhes sobre prazo e requisitos específicos, o projeto demonstra potencial inovador e aplicabilidade em contextos de baixa conectividade.",
+      "porQue": "O projeto 'sobera_skill' está alinhado com o edital devido ao foco em IA e treinamento local, conforme mencionado no edital sobre SoberanIA. Apesar da falta de informações detalhadas sobre o prazo e os requisitos específicos do edital, o projeto demonstra potencial inovador e relevância para o contexto de IA soberana.",
       "passos": [
-        "Avaliar a capacidade de execução do projeto com recursos locais e tecnologias abertas",
-        "Identificar parcerias estratégicas com instituições de ensino e governamentais",
-        "Desenvolver um plano de escalabilidade e impacto social comunitário"
+        "Refinar o projeto para alinhar com os requisitos específicos do edital, incluindo documentação detalhada de objetivos e metas.",
+        "Desenvolver uma proposta com foco em IA soberana, treinamento local e impacto social, com base no edital.",
+        "Fortalecer a demonstração de viabilidade técnica e capacidade de execução com recursos disponíveis."
       ]
     },
     {
