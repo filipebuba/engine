@@ -60,7 +60,9 @@ function importarDoRadar(): { novos: number; total: number } {
   const novos = deRadar(readFileSync(radar, 'utf8'));
   const atuais = carregar<Edital[]>(ARQ_EDITAIS, []);
   const porId = new Map(atuais.map((e) => [e.id, e]));
-  for (const e of novos) porId.set(e.id, e);
+  // registro CRU do radar nunca sobrescreve edital já enriquecido (bug pago em 07/07:
+  // cada pesquisa apagava a extração inteira e re-gastava GPU para refazê-la)
+  for (const e of novos) { if (!porId.has(e.id)) porId.set(e.id, e); }
   const todos = [...porId.values()];
   salvar(ARQ_EDITAIS, todos);
   return { novos: novos.length, total: todos.length };
