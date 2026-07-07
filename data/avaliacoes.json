@@ -1,0 +1,154 @@
+{
+  "geradoEm": "06/07/2026, 21:46:17",
+  "totalProjetos": 52,
+  "avaliacoes": [
+    {
+      "edital": {
+        "id": "radar-https-www-gov-br-mcti-pt-br-acompanhe-o-mcti-noticias-2026-0",
+        "titulo": "Edital de R$ 300 milhões apoia empresas no desenvolvimento de ...",
+        "fonte": "radar-editais",
+        "url": "https://www.gov.br/mcti/pt-br/acompanhe-o-mcti/noticias/2026/04/edital-de-r-300-milhoes-apoia-empresas-no-desenvolvimento-de-tecnologias-digitais-avancadas",
+        "resumo": "O edital apoia o desenvolvimento de tecnologias digitais avançadas, incluindo inteligência artificial, e o projeto SoberanIA alinha-se diretamente com essa área, visando IA soberana e local.",
+        "valorMax": null,
+        "tipoRecurso": null,
+        "portes": [],
+        "setores": [],
+        "locais": [],
+        "estagios": [],
+        "prazo": null
+      },
+      "elegibilidade": {
+        "elegivel": true,
+        "motivos": []
+      },
+      "projeto": "sobera_skill",
+      "score": {
+        "alinhamento": 18,
+        "impacto": 15,
+        "competitividade": 12,
+        "viabilidade": 10,
+        "historico": 5,
+        "diversidade": 8
+      },
+      "total": 68,
+      "badge": "media",
+      "porQue": "O projeto sobera_skill alinha-se com o foco do edital em IA soberana, embora informações sobre o edital sejam limitadas. Há evidências de desenvolvimento técnico, mas falta clareza sobre o escopo e os critérios de seleção do edital.",
+      "passos": [
+        "Avaliar o escopo do edital para confirmar se IA soberana e treinamento em ambiente WSL são priorizados",
+        "Desenvolver uma proposta detalhada que destaque a capacidade de execução local e a autonomia tecnológica",
+        "Fortalecer o histórico de entregas com documentação técnica e demonstrações de funcionalidades"
+      ]
+    },
+    {
+      "edital": {
+        "id": "radar-https-santotech-com-br-ub-rio-ia-2026-edital-startups-ia-inv",
+        "titulo": "Edital Hub Rio.IA 2026 PRORROGA inscrições para startups de IA com ...",
+        "fonte": "radar-editais",
+        "url": "https://santotech.com.br/ub-rio-ia-2026-edital-startups-ia-investimento-industria/",
+        "resumo": "O edital busca soluções de IA para a indústria brasileira, alinhadas ao PBIA, e o projeto SoberanIA se enquadra em IA soberana e local, com potencial para contribuir com soluções de IA para a indústria.",
+        "valorMax": null,
+        "tipoRecurso": null,
+        "portes": [],
+        "setores": [],
+        "locais": [],
+        "estagios": [],
+        "prazo": null
+      },
+      "elegibilidade": {
+        "elegivel": true,
+        "motivos": []
+      },
+      "projeto": "sobera_skill",
+      "score": {
+        "alinhamento": 15,
+        "impacto": 12,
+        "competitividade": 10,
+        "viabilidade": 10,
+        "historico": 5,
+        "diversidade": 8
+      },
+      "total": 60,
+      "badge": "media",
+      "porQue": "O projeto 'sobera_skill' está alinhado com a proposta do edital de IA soberana, embora a informação sobre o edital seja limitada. O projeto demonstra potencial para contribuir com soluções de IA no contexto local, especialmente com foco em treinamento e execução no ambiente WSL Ubuntu.",
+      "passos": [
+        "Avaliar a alinhamento com o PBIA e com as diretrizes do edital Hub Rio.IA 2026",
+        "Desenvolver uma proposta detalhada que destaque a soberania e a capacidade de execução local",
+        "Fortalecer a demonstração de impacto e inovação no contexto da indústria brasileira e da Guiné-Bissau"
+      ]
+    },
+    {
+      "edital": {
+        "id": "radar-https-cienciaetecnologia-prefeitura-rio-noticias-rio-ia-pref",
+        "titulo": "Rio.IA: Prefeitura apresenta seu primeiro edital para startups de IA ...",
+        "fonte": "radar-editais",
+        "url": "https://cienciaetecnologia.prefeitura.rio/noticias/rio-ia-prefeitura-do-rio-apresenta-no-dia-4-seu-primeiro-edital-para-startups-de-ia-com-solucoes-para-a-industria/",
+        "resumo": "O edital busca soluções de IA para a indústria, alinhando-se diretamente com o projeto SoberanIA, que desenvolve IA soberana e local com foco em custo baixo e aplicabilidade prática.",
+        "valorMax": null,
+        "tipoRecurso": null,
+        "portes": [],
+        "setores": [],
+        "locais": [],
+        "estagios": [],
+        "prazo": null
+      },
+      "elegibilidade": {
+        "elegivel": true,
+        "motivos": []
+      },
+      "projeto": "sobera_skill",
+      "score": {
+        "alinhamento": 15,
+        "impacto": 12,
+        "competitividade": 10,
+        "viabilidade": 10,
+        "historico": 5,
+        "diversidade": 8
+      },
+      "total": 60,
+      "badge": "media",
+      "porQue": "O projeto sobera_skill está alinhado com o foco do edital em IA soberana e aplicabilidade prática, embora informações sobre o edital sejam limitadas. O projeto demonstra capacidade de execução e inovação no uso de IA em ambiente híbrido.",
+      "passos": [
+        "Refinar o alinhamento com as necessidades da indústria descritas no edital",
+        "Desenvolver uma proposta detalhada com demonstração de funcionalidades práticas",
+        "Fortalecer o histórico de entregas com exemplos concretos de projetos anteriores"
+      ]
+    },
+    {
+      "edital": {
+        "id": "radar-https-mover-fundep-ufmg-br-chamada-agentes-ia",
+        "titulo": "Fundep abre Chamada Pública para projetos de Inteligência Artificial",
+        "fonte": "radar-editais",
+        "url": "https://mover.fundep.ufmg.br/chamada-agentes-ia/",
+        "resumo": "A chamada é específica para o setor automotivo e exige colaboração entre ICTs e empresas da cadeia automotiva, o que não se alinha com o perfil do proponente (pesquisador independente) e os projetos do portfólio.",
+        "valorMax": null,
+        "tipoRecurso": null,
+        "portes": [],
+        "setores": [],
+        "locais": [],
+        "estagios": [],
+        "prazo": null
+      },
+      "elegibilidade": {
+        "elegivel": true,
+        "motivos": []
+      },
+      "projeto": "bufala",
+      "score": {
+        "alinhamento": 5,
+        "impacto": 10,
+        "competitividade": 12,
+        "viabilidade": 10,
+        "historico": 5,
+        "diversidade": 8
+      },
+      "total": 50,
+      "badge": "media",
+      "porQue": "O edital está focado no setor automotivo e na colaboração entre ICTs e empresas da cadeia automotiva, o que não se alinha diretamente com o projeto 'bufala', que é uma solução de IA comunitária para assistência rural. No entanto, o projeto apresenta um alto potencial de impacto e inovação no uso de IA em contextos de baixa conectividade e em áreas rurais.",
+      "passos": [
+        "Revisar o edital para identificar se há subáreas ou tecnologias que possam ser alinhadas ao projeto 'bufala'",
+        "Adaptar o proposto para destacar a aplicação de IA em contextos rurais e de baixa conectividade, mesmo que fora do setor automotivo",
+        "Buscar parcerias com empresas da cadeia automotiva que possam se interessar por soluções de IA em contextos de baixa conectividade"
+      ]
+    }
+  ]
+}

@@ -5,7 +5,7 @@ de "ainda está aberto?" (a lição do radar: prazo vencido não pode virar matc
 IMPORTS especificados por tarefa — copie exatamente. Emita cada arquivo completo em
 blocos === FILE: caminho === / === END ===.
 
-- [ ] Criar `src/edital.ts` e `src/edital.test.ts` conforme a "Spec tarefa 1" (tipo Edital, parseEdital com validação rigorosa e defaults, editalAberto comparando prazo ISO com hoje).
+- [x] Criar `src/edital.ts` e `src/edital.test.ts` conforme a "Spec tarefa 1" (tipo Edital, parseEdital com validação rigorosa e defaults, editalAberto comparando prazo ISO com hoje). (feito pelo CONDUTOR: 2 rodadas do loop abaixo do teto — decisão do dono: entrega primeiro)
 
 ## Spec tarefa 1 — src/edital.ts
 
