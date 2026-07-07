@@ -33,6 +33,11 @@ describe('startServer', () => {
     expect(res.headers.get('content-type')).toContain('text/html');
     expect(html).toContain('EDITAL MATCH');
     expect(html).toContain('/api/status');
+    expect(html).toContain('id="busca"');
+    expect(html).toContain('data-acao="csv"');
+    expect(html).toContain('data-acao="tema"');
+    expect(html).toContain('role="dialog"');
+    expect(html).toContain('class="skip"');
 
     server.close();
   });
