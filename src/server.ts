@@ -19,7 +19,8 @@ export type AppState = {
 export type Acao = (etapa: (msg: string) => void) => Promise<void>;
 export type AcaoProposta = (editalId: string, etapa: (msg: string) => void) => Promise<string>;
 export type AcaoPlaybook = (editalId: string, etapa: (msg: string) => void) => Promise<unknown>;
-export type Acoes = { pesquisar?: Acao; sincronizar?: Acao; proposta?: AcaoProposta; playbook?: AcaoPlaybook };
+export type AcaoDesfecho = (editalId: string, status: string) => void;
+export type Acoes = { pesquisar?: Acao; sincronizar?: Acao; proposta?: AcaoProposta; playbook?: AcaoPlaybook; desfecho?: AcaoDesfecho };
 
 // Executa uma ação com trava de ocupado — usada pelo HTTP e pelo agendador interno.
 export function executarAcao(state: AppState, acoes: Acoes, nome: 'pesquisar' | 'sincronizar'): 'ok' | 'ocupado' | 'indisponivel' {
@@ -279,6 +280,28 @@ export function startServer(state: AppState, porta: number, acoes: Acoes = {}): 
   state.playbooks = state.playbooks ?? {};
 
   const server = createServer((req, res) => {
+    if (req.method === 'POST' && req.url === '/api/desfecho') {
+      let corpo = '';
+      req.on('data', (c) => { corpo += c; });
+      req.on('end', () => {
+        let id = '', st = '';
+        try {
+          const b = JSON.parse(corpo || '{}') as { id?: unknown; status?: unknown };
+          id = String(b.id ?? '');
+          st = String(b.status ?? '');
+        } catch { /* corpo inválido */ }
+        const validos = ['rascunho', 'em_analise', 'aprovada', 'reprovada'];
+        if (!acoes.desfecho || !id || !validos.includes(st)) {
+          res.writeHead(400, { 'Content-Type': 'application/json' });
+          res.end(JSON.stringify({ erro: 'informe {"id","status"} com status válido' }));
+          return;
+        }
+        acoes.desfecho(id, st);
+        res.writeHead(200, { 'Content-Type': 'application/json' });
+        res.end(JSON.stringify({ ok: true }));
+      });
+      return;
+    }
     if (req.method === 'POST' && req.url === '/api/playbook') {
       let corpo = '';
       req.on('data', (c) => { corpo += c; });

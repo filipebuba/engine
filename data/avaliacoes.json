@@ -1,7 +1,46 @@
 {
-  "geradoEm": "07/07/2026, 02:26:19",
+  "geradoEm": "07/07/2026, 03:06:53",
   "totalProjetos": 52,
   "avaliacoes": [
+    {
+      "edital": {
+        "id": "radar-https-www-gov-br-mcti-pt-br-acompanhe-o-mcti-noticias-2026-0",
+        "titulo": "Edital de R$ 300 milhões apoia empresas no desenvolvimento de ...",
+        "fonte": "Ministério da Ciência, Tecnologia e Inovação",
+        "url": "https://www.gov.br/mcti/pt-br/acompanhe-o-mcti/noticias/2026/04/edital-de-r-300-milhoes-apoia-empresas-no-desenvolvimento-de-tecnologias-digitais-avancadas",
+        "resumo": "O edital apoia o desenvolvimento de tecnologias digitais avançadas, incluindo inteligência artificial, e o projeto SoberanIA alinha-se diretamente com essa área, visando IA soberana e local.",
+        "valorMax": null,
+        "tipoRecurso": null,
+        "portes": [],
+        "setores": [],
+        "locais": [],
+        "estagios": [],
+        "prazo": null,
+        "linkInscricao": "https://www.gov.br/mcti/pt-br/acesso-a-informacao/processo-eletronico/cadastro-usuario-externo",
+        "extraidoEm": "2026-07-07T06:01:50.906Z"
+      },
+      "elegibilidade": {
+        "elegivel": true,
+        "motivos": []
+      },
+      "projeto": "sobera_skill",
+      "score": {
+        "alinhamento": 18,
+        "impacto": 16,
+        "competitividade": 14,
+        "viabilidade": 12,
+        "historico": 6,
+        "diversidade": 8
+      },
+      "total": 74,
+      "badge": "alta",
+      "porQue": "O projeto sobera_skill alinha-se com o foco do edital em IA soberana, embora a informação sobre o edital seja limitada. Há evidências de inovação e potencial impacto na capacitação de IA local.",
+      "passos": [
+        "Avaliar a capacidade de execução do projeto em ambiente WSL Ubuntu",
+        "Identificar oportunidades de escala e replicação em outros contextos locais",
+        "Reforçar a conexão com o objetivo do edital de desenvolvimento de tecnologias digitais avançadas"
+      ]
+    },
     {
       "edital": {
         "id": "radar-https-santotech-com-br-ub-rio-ia-2026-edital-startups-ia-inv",
@@ -157,20 +196,20 @@
       },
       "projeto": "sobera_skill",
       "score": {
-        "alinhamento": 18,
-        "impacto": 16,
-        "competitividade": 14,
+        "alinhamento": 15,
+        "impacto": 18,
+        "competitividade": 16,
         "viabilidade": 12,
         "historico": 6,
         "diversidade": 8
       },
-      "total": 74,
+      "total": 75,
       "badge": "alta",
-      "porQue": "O projeto 'sobera_skill' está alinhado com o edital devido ao foco em IA e treinamento local, elementos centrais do SoberanIA. No entanto, há pouca informação sobre o edital para pontuar com mais precisão.",
+      "porQue": "O projeto 'sobera_skill' está alinhado com o edital devido ao foco em IA e treinamento local, conforme mencionado no resumo do edital. Apesar da falta de detalhes sobre prazo e requisitos específicos, o projeto demonstra potencial inovador e aplicabilidade em contextos de baixa conectividade.",
       "passos": [
-        "Avaliar a relevância do projeto 'sobera_skill' para o edital com base em critérios de IA soberana e treinamento local.",
-        "Identificar possíveis parcerias ou recursos adicionais para reforçar a viabilidade do projeto.",
-        "Desenvolver uma proposta detalhada que destaque a capacidade de execução e impacto social do projeto."
+        "Avaliar a capacidade de execução do projeto com recursos locais e tecnologias abertas",
+        "Identificar parcerias estratégicas com instituições de ensino e governamentais",
+        "Desenvolver um plano de escalabilidade e impacto social comunitário"
       ]
     },
     {

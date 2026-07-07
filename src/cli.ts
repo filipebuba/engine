@@ -5,7 +5,7 @@ import { deRadar } from './coleta.js';
 import { carregarProjetos, resumoPortfolio, type PerfilBase, type Projeto } from './perfil.js';
 import { avaliar, type Avaliacao } from './match.js';
 import { juizLocal, redatorLocal, estrategistaLocal } from './juiz.js';
-import { carregar, salvar } from './store.js';
+import { carregar, salvar, anexar } from './store.js';
 import { caminhoRadar, caminhoProjetos } from './config.js';
 import { baixarPagina, extrairLinkInscricao, linkSuspeito } from './inscricao.js';
 import { aplicarExtracao, extratorLocal, paraTexto } from './extrator.js';
@@ -21,6 +21,8 @@ const USO = `uso: edital-match <comando>
 const ARQ_EDITAIS = 'data/editais.json';
 const ARQ_AVALIACOES = 'data/avaliacoes.json';
 const ARQ_PORTFOLIO = 'data/portfolio.json';
+// dataset do juiz-LoRA: cada julgamento/extração/desfecho vira uma linha que nunca se perde
+const ARQ_TRAILS = 'data/trails.jsonl';
 
 // Perfil do proponente — configurável em data/perfil.json (ex.: {"porte":"startup","locais":["BR"]}).
 // Padrão: pesquisador-desenvolvedor pessoa física, BR + GW. Mudou de figura jurídica?
@@ -80,7 +82,15 @@ async function matchCore(log: (msg: string) => void): Promise<AppState> {
   for (const [i, e] of editais.entries()) {
     log(`julgando ${i + 1}/${editais.length}: ${e.titulo.slice(0, 50)}`);
     try {
-      avaliacoes.push(await avaliar(e, PERFIL, portfolio, juiz, hoje));
+      const a = await avaliar(e, PERFIL, portfolio, juiz, hoje);
+      avaliacoes.push(a);
+      anexar(ARQ_TRAILS, {
+        tipo: 'julgamento',
+        edital: { id: e.id, titulo: e.titulo, fonte: e.fonte, prazo: e.prazo },
+        elegivel: a.elegibilidade.elegivel,
+        motivos: a.elegibilidade.motivos,
+        parecer: { projeto: a.projeto, score: a.score, total: a.total, badge: a.badge, porQue: a.porQue, passos: a.passos },
+      });
     } catch (err) {
       log(`erro em "${e.titulo.slice(0, 30)}": ${err instanceof Error ? err.message : String(err)}`);
     }
@@ -170,7 +180,9 @@ function serve(portaArg: string | undefined): number {
           if (precisaDados) {
             etapa(`extraindo dados ${i + 1}/${editais.length}: ${e.titulo.slice(0, 40)}`);
             try {
-              editais[i] = aplicarExtracao(e, await extrator(e.titulo, paraTexto(html)));
+              const x = await extrator(e.titulo, paraTexto(html));
+              editais[i] = aplicarExtracao(e, x);
+              anexar(ARQ_TRAILS, { tipo: 'extracao', edital: { id: e.id, titulo: e.titulo, url: e.url }, extracao: x });
             } catch { /* extração é melhor-esforço; tenta de novo na próxima pesquisa */ }
           }
         }
@@ -206,7 +218,13 @@ function serve(portaArg: string | undefined): number {
         ? `${proj.nome} — ${proj.oQueE}\nestado: ${proj.estado}\npalavras-chave: ${proj.palavrasChave.join(', ')}`
         : (aval.projeto || '[COMPLETAR: projeto não identificado]');
       etapa(`montando playbook de "${aval.edital.titulo.slice(0, 40)}…" com o modelo local`);
-      return estrategistaLocal()(aval.edital, resumo, aval.porQue);
+      const pb = await estrategistaLocal()(aval.edital, resumo, aval.porQue);
+      anexar(ARQ_TRAILS, { tipo: 'playbook', editalId, playbook: pb });
+      return pb;
+    },
+    desfecho: (editalId, status) => {
+      // o RÓTULO do dataset: aprovada/reprovada fecha o par (julgamento → mundo real)
+      anexar(ARQ_TRAILS, { tipo: 'desfecho', editalId, status });
     },
   };
 
