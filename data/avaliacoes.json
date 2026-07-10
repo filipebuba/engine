@@ -1,5 +1,5 @@
 {
-  "geradoEm": "07/07/2026, 06:38:06",
+  "geradoEm": "09/07/2026, 23:24:37",
   "totalProjetos": 52,
   "avaliacoes": [
     {
@@ -23,22 +23,22 @@
         "elegivel": true,
         "motivos": []
       },
-      "projeto": "sobera_skill",
+      "projeto": "bufala",
       "score": {
-        "alinhamento": 18,
-        "impacto": 15,
-        "competitividade": 14,
+        "alinhamento": 20,
+        "impacto": 18,
+        "competitividade": 15,
         "viabilidade": 12,
-        "historico": 6,
+        "historico": 5,
         "diversidade": 8
       },
-      "total": 73,
+      "total": 78,
       "badge": "alta",
-      "porQue": "O projeto sobera_skill alinha-se com o foco do edital em tecnologias digitais avançadas, especialmente IA soberana, e apresenta um diferencial em execução local no ambiente WSL Ubuntu. Apesar da informação limitada sobre o edital, há evidências de inovação e potencial impacto na área de IA.",
+      "porQue": "O projeto 'bufala' está alinhado com o edital de tecnologias digitais avançadas e IA soberana, com foco em comunidades rurais em Guiné-Bissau. Oferece impacto social significativo por meio da assistência especializada e adaptação local. A utilização de tecnologias como Gemma 3n e Flutter demonstra competitividade em termos de inovação e adaptação ao contexto local. A viabilidade é alta devido à natureza de aplicação local e ao uso de tecnologias open source. Apesar da falta de histórico detalhado, o projeto tem potencial de impacto diverso por atender comunidades rurais.",
       "passos": [
-        "Desenvolver e testar o ambiente de treinamento e execução no WSL Ubuntu",
-        "Integrar com ferramentas de IA soberana e locais",
-        "Avaliar escalabilidade e adaptação para contextos de baixa conectividade"
+        "Realizar uma análise detalhada do projeto 'bufala' para confirmar a compatibilidade com os objetivos do edital.",
+        "Preparar uma proposta técnica que destaque o alinhamento com a IA soberana e a aplicação local em Guiné-Bissau.",
+        "Incluir dados sobre impacto social e potencial de inclusão digital para reforçar o valor do projeto."
       ]
     },
     {
@@ -194,22 +194,22 @@
         "elegivel": true,
         "motivos": []
       },
-      "projeto": "sobera_skill",
+      "projeto": "bufala",
       "score": {
-        "alinhamento": 15,
+        "alinhamento": 20,
         "impacto": 18,
-        "competitividade": 16,
+        "competitividade": 15,
         "viabilidade": 12,
-        "historico": 6,
-        "diversidade": 8
+        "historico": 5,
+        "diversidade": 10
       },
-      "total": 75,
+      "total": 80,
       "badge": "alta",
-      "porQue": "O projeto 'sobera_skill' está alinhado com o edital devido ao foco em IA e treinamento local, conforme mencionado no edital sobre SoberanIA. Apesar da falta de informações detalhadas sobre o prazo e os requisitos específicos do edital, o projeto demonstra potencial inovador e relevância para o contexto de IA soberana.",
+      "porQue": "O projeto 'bufala' está alinhado com o edital de tecnologias digitais e IA, especialmente com o foco em IA soberana e treinamento local de modelos. Ele oferece uma solução de IA comunitária para comunidades rurais em Guiné-Bissau, com foco em assistência especializada e uso de tecnologias locais, o que é altamente relevante para o contexto do edital. A viabilidade é boa, já que o projeto utiliza tecnologias como Flutter e Gemma 3n, que são compatíveis com a infraestrutura local. A diversidade é alta, pois o projeto visa inclusão e desenvolvimento de comunidades rurais, alinhando-se com a agenda de desenvolvimento sustentável.",
       "passos": [
-        "Refinar o projeto para alinhar com os requisitos específicos do edital, incluindo documentação detalhada de objetivos e metas.",
-        "Desenvolver uma proposta com foco em IA soberana, treinamento local e impacto social, com base no edital.",
-        "Fortalecer a demonstração de viabilidade técnica e capacidade de execução com recursos disponíveis."
+        "Realizar uma análise detalhada do edital para identificar os critérios de avaliação e requisitos específicos.",
+        "Preparar um plano de implementação do projeto 'bufala' com foco em IA soberana e treinamento local de modelos, incluindo parcerias com instituições locais.",
+        "Submeter a proposta com dados técnicos, impacto social e alinhamento com os objetivos do edital."
       ]
     },
     {
